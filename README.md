@@ -1,17 +1,3 @@
-# 🎯 GitHub Description برای پروژه کافه ریژوان
-
-## 📝 **نسخه کوتاه (Short Description)**
-
-**Cafe Rizvan - Modern React Coffee Shop Website**  
-A beautifully crafted, fully responsive cafe website built with React. Features interactive navigation menu, product gallery, reservation system, customer photo gallery with upload functionality, and stunning glass-morphism design.
-
-**✨ Tech Stack:** React, JavaScript, CSS3, HTML5  
-**🎨 Features:** Responsive Design, Interactive UI, Image Upload, Form Validation  
-**🚀 Live Demo:** [Coming Soon]
-
----
-
-## 📖 **نسخه کامل و حرفه‌ای (Long Description)**
 
 # ☕ Cafe Rizvan - Modern React Coffee Shop Website
 
