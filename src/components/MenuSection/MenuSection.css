@@ -1,0 +1,71 @@
+.menu-container {
+  background: 
+    #4a2b21 url('/public/photo/back.jpg') center/cover fixed;
+  background-blend-mode: overlay;
+  color: #f4e4d3;
+  padding: 40px 20px;
+  font-family: sans-serif;
+  direction: rtl;
+  position: relative;
+}
+
+.menu-title {
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 30px;
+  color: #f9e9d9;
+  font-weight: 700;
+}
+
+.menu-block {
+  display: flex;
+  align-items: center;
+  margin: 60px 0;
+  gap: 30px;
+}
+
+.menu-block.reverse {
+  flex-direction: row-reverse;
+}
+
+.menu-image img {
+  width: 320px;
+  height: 220PX;
+  object-fit: cover;
+  border-radius: 40px;
+  clip-path: path("M 20 0 Q 0 40 0 100 Q 0 160 20 200 Q 60 240 120 260 Q 200 260 240 200 Q 260 160 260 120 Q 260 40 200 0 Z");
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* سایه زیبا */
+  transition: all 0.3s ease; /* انیمیشن نرم */
+}
+
+.menu-image img:hover {
+  transform: scale(1.05); /* بزرگ شدن هنگام hover */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+.menu-list h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #e9c5a8;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  width: 260px;
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+.item span:last-child {
+  color: #d7b28f;
+}
+/* عکس‌های سمت چپ */
+.menu-block:not(.reverse) .menu-image {
+  order: 1;
+}
+
+/* عکس‌های سمت راست */
+.menu-block.reverse .menu-image {
+  order: 4;
+}

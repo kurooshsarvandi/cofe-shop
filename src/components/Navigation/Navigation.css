@@ -1,0 +1,150 @@
+
+/* ریست کردن استایل‌های پیش‌فرض مرورگر */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --coffee-brown: #8B4513;
+    --cream: #F5F5DC;
+    --dark-brown: #3E2723;
+    --light-coffee: #A0522D;
+    --gold: #D4AF37;
+}
+
+.navbar {
+    background: linear-gradient(135deg, var(--dark-brown), var(coffee-brown));
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* استایل لوگو */
+.nav-logo a {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-icon {
+    font-size: 2rem;
+}
+
+/* استایل منوی اصلی - در دسکتاپ */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--cream);
+    text-decoration: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background-color: var(--gold);
+    color: var(--dark-brown);
+}
+
+/* استایل دکمه هامبورگر - در دسکتاپ مخفی */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: var(--cream);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* 📱 برای موبایل */
+@media screen and (max-width: 768px) {
+    /* نمایش دکمه هامبورگر در سمت چپ */
+    .hamburger {
+        display: flex;
+        order: -1; /* اول نمایش داده بشه */
+    }
+    
+    /* لوگو به راست بره */
+    .nav-logo {
+        order: 1;
+        margin-left: auto;
+    }
+    
+    /* منوی اصلی مخفی بشه */
+    .nav-menu {
+        position: fixed;
+        top: -100%; /* خارج از صفحه از بالا */
+        left: 0;
+        flex-direction: column;
+        background: linear-gradient(135deg, var(--dark-brown), var(--coffee-brown));
+        width: 100%;
+        text-align: center;
+        transition: 0.4s;
+        padding: 1rem 0;
+        gap: 0;
+        height: auto;
+        max-height: 60vh;
+        overflow-y: auto;
+    }
+    
+    /* وقتی منو فعاله از بالا بیاد پایین */
+    .nav-menu.active {
+        top: 80px;
+    }
+    
+    .nav-item {
+        margin: 0.3rem 0;
+        width: 100%;
+    }
+    
+    .nav-link {
+        padding: 0.5rem;
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 8px;
+    }
+    
+    /* انیمیشن دکمه هامبورگر */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: var(--gold);
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: var(--gold);
+    }
+}

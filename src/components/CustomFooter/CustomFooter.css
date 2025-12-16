@@ -1,0 +1,77 @@
+.footer-wrapper {
+  background: #0d161c;
+  padding: 40px 0;
+  text-align: center;
+  border-top: 1px solid #1f2a30;
+  color: #d0d0d0;
+  font-family: Arial, sans-serif;
+}
+
+.footer-copy {
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: #c8d1d6;
+}
+
+.footer-copy strong {
+  color: #fff;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #56636b;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #c9d1d9;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-icon:hover {
+  transform: scale(1.15);
+  color: #00c0ff;
+  border-color: #00c0ff;
+}
+
+.footer-icon i {
+  font-size: 18px;
+}
+
+.footer-designer {
+  font-size: 14px;
+  color: #8aa0b1;
+}
+
+.designer-name {
+  color: #4da6ff;
+}
+
+/* رسپانسیو */
+@media (max-width: 768px) {
+  .footer-wrapper {
+    padding: 30px 0;
+  }
+  
+  .footer-icons {
+    gap: 12px;
+  }
+  
+  .footer-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .footer-icon i {
+    font-size: 16px;
+  }
+}
