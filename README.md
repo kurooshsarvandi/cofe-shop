@@ -14,7 +14,7 @@
 ### 📱 **Core Pages**
 1. **Home Page** - Hero section with video background and call-to-action
 2. **Interactive Navigation** - Responsive hamburger menu with smooth scrolling
-3. **Coffee Menu** - Beautifully styled product display with category sections
+3. **Coffee Shop** - Beautifully styled product display with category sections
 4. **Our Story** - Timeline with image slideshow and typewriter text effect
 5. **Reservation System** - Complete booking form with date/time selection
 6. **Customer Gallery** - Interactive photo upload and display system
@@ -42,7 +42,7 @@
 ## 🏗️ **Project Structure**
 
 ```
-cafe-menu/
+cafe-shop/
 ├── src/
 │   ├── components/
 │   │   ├── Navigation/     # Responsive navigation bar
@@ -91,10 +91,10 @@ cafe-menu/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/cafe-rizvan.git
+git clone https://github.com/kurooshsarvandi/cofe-shop.git
 
 # Navigate to project directory
-cd cafe-rizvan
+cd cafe-shop
 
 # Install dependencies
 npm install
