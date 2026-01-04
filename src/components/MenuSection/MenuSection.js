@@ -30,17 +30,6 @@ function MenuSection() {
           </ul>
         </div>
 
-        <div className="menu-card">
-          <h2>اسموتی</h2>
-          <ul>
-            <li><span>موز انبه </span><span>125</span></li>
-            <li><span>هندوانه</span><span>120</span></li>
-            <li><span>طالبی</span><span>120</span></li>
-            <li><span>آناناس</span><span>115</span></li>
-            <li><span>استوایی</span><span>115</span></li>
-            <li><span>هلو</span><span>115</span></li>
-          </ul>
-        </div>
 
         <div className="menu-card">
           <h2>نوشیدنی های گرم</h2>
@@ -58,32 +47,6 @@ function MenuSection() {
             <li><span>کرک</span><span>145</span></li>
             <li><span>موکا</span><span>145</span></li>
             <li><span>لاته</span><span>145</span></li>
-          </ul>
-        </div>
-
-        <div className="menu-card">
-          <h2>دمنوش گیاهی</h2>
-          <ul>
-            <li><span>دمنوش ریژوان</span><span>110</span></li>
-            <li><span>گل گاو زبان</span><span>105</span></li>
-            <li><span>آویشن</span><span>100</span></li>
-            <li><span>به لیمو</span><span>100</span></li>
-            <li><span>بهار نارنج</span><span>100</span></li>
-            <li><span>استوایی</span><span>100</span></li>
-            <li><span>چای سبز</span><span>105</span></li>
-            <li><span>چای ترش</span><span>100</span></li>
-            <li><span>چای زعفرانی</span><span>100</span></li>
-            <li><span>چای دارچین</span><span>95</span></li>
-            <li><span>چای با گل محمدی</span><span>90</span></li>
-            <li><span>سفارشی</span><span>105</span></li>
-          </ul>
-        </div>
-
-        <div className="menu-card">
-          <h2>کیک و شیرینی</h2>
-          <ul>
-            <li><span> کیک روز</span><span>120</span></li>
-            <li><span> میل ندارم</span><span>60</span></li>
           </ul>
         </div>
 
@@ -108,6 +71,37 @@ function MenuSection() {
             <li><span>بستنی 3 اسکپی</span><span>120</span></li>
             <li><span>معجون ویژه ریژوان</span><span>300</span></li>
             <li><span>وافل بستنی</span><span>230</span></li>
+          </ul>
+        </div>
+
+        <div className="menu-card">
+          <h2>اسموتی</h2>
+          <ul>
+            <li><span>موز انبه </span><span>125</span></li>
+            <li><span>هندوانه</span><span>120</span></li>
+            <li><span>طالبی</span><span>120</span></li>
+            <li><span>آناناس</span><span>115</span></li>
+            <li><span>استوایی</span><span>115</span></li>
+            <li><span>هلو</span><span>115</span></li>
+          </ul>
+        </div>
+
+
+        <div className="menu-card">
+          <h2>دمنوش گیاهی</h2>
+          <ul>
+            <li><span>دمنوش ریژوان</span><span>110</span></li>
+            <li><span>گل گاو زبان</span><span>105</span></li>
+            <li><span>آویشن</span><span>100</span></li>
+            <li><span>به لیمو</span><span>100</span></li>
+            <li><span>بهار نارنج</span><span>100</span></li>
+            <li><span>استوایی</span><span>100</span></li>
+            <li><span>چای سبز</span><span>105</span></li>
+            <li><span>چای ترش</span><span>100</span></li>
+            <li><span>چای زعفرانی</span><span>100</span></li>
+            <li><span>چای دارچین</span><span>95</span></li>
+            <li><span>چای با گل محمدی</span><span>90</span></li>
+            <li><span>سفارشی</span><span>105</span></li>
           </ul>
         </div>
 
@@ -167,6 +161,14 @@ function MenuSection() {
           </ul>
         </div>
 
+        <div className="menu-card">
+          <h2>کیک و شیرینی</h2>
+          <ul>
+            <li><span> کیک روز</span><span>120</span></li>
+            <li><span> میل ندارم</span><span>60</span></li>
+          </ul>
+        </div>
+
 
         <div className="menu-card">
           <h2>صبحانه </h2>
@@ -199,6 +201,11 @@ function MenuSection() {
         <div className="menu-card">
           <h2>مدت زمان سرو سفارش 45 دقیقه می باشد</h2>
         </div>
+
+        <div className="menu-card">
+          <h2>cafe.rizhvan <i class="bi bi-instagram"></i></h2>
+        </div>
+
       </div>
     </div>
   );
