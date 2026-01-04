@@ -1,71 +1,90 @@
-.menu-container {
-  background: 
-    #4a2b21 url('/public/photo/back.jpg') center/cover fixed;
-  background-blend-mode: overlay;
-  color: #f4e4d3;
+.menu-board {
+  min-height: 100vh;
+  background: #1e1b18;
+  color: #f5e6d3;
   padding: 40px 20px;
-  font-family: sans-serif;
+  font-family: "Vazirmatn", sans-serif;
   direction: rtl;
-  position: relative;
 }
 
-.menu-title {
+.menu-board-title {
   text-align: center;
-  font-size: 48px;
-  margin-bottom: 30px;
-  color: #f9e9d9;
-  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+  color: #f7e9d7;
 }
 
-.menu-block {
-  display: flex;
-  align-items: center;
-  margin: 60px 0;
-  gap: 30px;
+/* 🔥 چیدمان آجری واقعی */
+.menu-columns {
+  column-count: 4;
+  column-gap: 20px;
 }
 
-.menu-block.reverse {
-  flex-direction: row-reverse;
+/* ریسپانسیو */
+@media (max-width: 1200px) {
+  .menu-columns {
+    column-count: 3;
+  }
 }
 
-.menu-image img {
-  width: 320px;
-  height: 220PX;
-  object-fit: cover;
-  border-radius: 40px;
-  clip-path: path("M 20 0 Q 0 40 0 100 Q 0 160 20 200 Q 60 240 120 260 Q 200 260 240 200 Q 260 160 260 120 Q 260 40 200 0 Z");
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* سایه زیبا */
-  transition: all 0.3s ease; /* انیمیشن نرم */
+@media (max-width: 768px) {
+  .menu-columns {
+    column-count: 2;
+  }
 }
 
-.menu-image img:hover {
-  transform: scale(1.05); /* بزرگ شدن هنگام hover */
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+@media (max-width: 480px) {
+  .menu-columns {
+    column-count: 1;
+  }
 }
 
-.menu-list h2 {
-  font-size: 26px;
+.menu-card {
+  border: 2px solid #e8d3b3;
+  padding: 16px 14px;
+  position: relative;
   margin-bottom: 20px;
-  color: #e9c5a8;
+
+  break-inside: avoid;
+  height: fit-content;
 }
 
-.item {
+.menu-card::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(232, 211, 179, 0.35);
+  pointer-events: none;
+}
+
+.menu-card h2 {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #e9c5a8;
+  line-height: 1.4;
+}
+
+.menu-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-card li {
   display: flex;
   justify-content: space-between;
-  width: 260px;
-  margin: 8px 0;
-  font-size: 18px;
+  padding: 4px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.18);
+  font-size: 14px;
 }
 
-.item span:last-child {
+.menu-card li:last-child {
+  border-bottom: none;
+}
+
+.menu-card li span:last-child {
   color: #d7b28f;
-}
-/* عکس‌های سمت چپ */
-.menu-block:not(.reverse) .menu-image {
-  order: 1;
-}
-
-/* عکس‌های سمت راست */
-.menu-block.reverse .menu-image {
-  order: 4;
+  white-space: nowrap;
 }
