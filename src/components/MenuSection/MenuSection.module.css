@@ -1,0 +1,235 @@
+/* ========== استایل اصلی تخته سیاه ========== */
+.menuBoard {
+  background-color: #0a0a0a;
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 2px, 
+    rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px),
+    linear-gradient(to bottom, #121212, #000000);
+  min-height: 100vh;
+  padding: 0;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #f0e6d2;
+  line-height: 1.6;
+}
+
+/* ========== تصویر اصلی بالا ========== */
+.mainHeaderImage {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+  border-bottom: 3px solid #333;
+}
+
+/* ========== کانتینر کارت‌ها ========== */
+.menuColumns {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+/* ========== کارت منو - چیدمان FLEX (عکس چپ، متن راست) ========== */
+.menuCard {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #444;
+  border-left: 5px solid #8B7355; /* حاشیه چپ طلایی/چوبی */
+  border-radius: 2px;
+  margin: 30px 0;
+  padding: 25px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+/* چیدمان عکس و متن کنار هم */
+.cardContent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+/* باکس تصویر در سمت چپ */
+.imageContainer {
+  flex-shrink: 0;
+  width: 280px; /* اینجا سایز عکس را تغییر دهید */
+  border: 2px solid #555;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #000;
+}
+
+.categoryImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.categoryImage:hover {
+  opacity: 0.9;
+}
+
+/* باکس متن در سمت راست */
+.textContainer {
+  flex: 1;
+  padding-top: 5px;
+}
+
+/* ========== استایل‌های متن ========== */
+/* عنوان هر بخش */
+.sectionTitle {
+  font-size: 2.2em;
+  color: #f0e6d2;
+  margin: 0 0 25px 0;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed #666;
+  text-align: right;
+  font-weight: normal;
+  text-shadow: 1px 1px 2px #000;
+  font-family: inherit;
+}
+
+/* لیست آیتم‌ها */
+.menuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px dotted #444;
+  font-size: 1.15em;
+}
+
+.menuItem:last-child {
+  border-bottom: none;
+}
+
+/* نام آیتم */
+.itemName {
+  color: #f0e6d2;
+  text-align: right;
+  flex-grow: 1;
+  padding-left: 20px;
+}
+
+/* قیمت آیتم - استایل سنتی ساده */
+.itemPrice {
+  color: #f0e6d2; /* رنگ یکسان با متن (بدون رنگ طلایی) */
+  font-family: 'Courier New', monospace;
+  font-size: 1.25em;
+  min-width: 70px;
+  text-align: left;
+  direction: ltr;
+  border: 1px solid #666;
+  padding: 3px 10px;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* ========== کارت‌های ویژه ========== */
+/* کارت مدت زمان و اینستاگرام */
+.specialCard {
+  text-align: center;
+  background: rgba(10, 10, 10, 0.95);
+  border: 2px dashed #666;
+  padding: 35px 25px;
+  margin: 40px 0;
+  font-style: italic;
+}
+
+.specialCard h2 {
+  font-size: 1.9em;
+  color: #ccc;
+  margin: 0;
+  font-weight: normal;
+}
+
+/* آیکون اینستاگرام */
+.instagramIcon {
+  color: #E4405F;
+  margin-right: 10px;
+  font-size: 1.4em;
+  vertical-align: middle;
+}
+
+/* ========== ریسپانسیو ========== */
+/* تبلت */
+@media (max-width: 992px) {
+  .cardContent {
+    flex-direction: column;
+  }
+  
+  .imageContainer {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto 25px;
+  }
+  
+  .sectionTitle {
+    text-align: center;
+  }
+  
+  .menuColumns {
+    padding: 20px 15px;
+  }
+}
+
+/* موبایل */
+@media (max-width: 768px) {
+  .menuCard {
+    padding: 20px;
+    margin: 25px 0;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+  
+  .cardContent {
+    gap: 20px;
+  }
+  
+  .itemPrice {
+    font-size: 1.15em;
+    min-width: 60px;
+    padding: 2px 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .menuColumns {
+    padding: 15px 10px;
+  }
+  
+  .menuItem {
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    padding: 16px 0;
+  }
+  
+  .itemName {
+    padding-left: 0;
+    margin-bottom: 8px;
+    width: 100%;
+  }
+  
+  .itemPrice {
+    align-self: flex-end;
+    margin-top: 5px;
+  }
+  
+  .specialCard {
+    padding: 25px 15px;
+  }
+  
+  .specialCard h2 {
+    font-size: 1.6em;
+  }
+}
