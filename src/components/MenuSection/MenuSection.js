@@ -685,48 +685,13 @@ function MenuSection() {
 
 {/*NFC*/}
 <div className={styles.menuCard}>
-  <h2 className={styles.sectionTitle}>
-    <FaWaveSquare className={styles.menuIcon} /> {/* آیکون NFC */}
-    منوی NFC
-  </h2>
   <div className={styles.nfcContainer}>
     <div className={styles.nfcIcon}>
-      <FaNfcSymbol size={60} color="#8B4513" /> {/* آیکون بزرگ NFC */}
-    </div>
-    <p className={styles.nfcText}>
-      <strong>منوی کافه را با NFC دریافت کنید</strong><br/>
-      گوشی خود را نزدیک تگ NFC روی میز نگه دارید
-    </p>
-    
-    <div className={styles.instructions}>
-      <h4>روش فعال‌سازی NFC:</h4>
-      <div className={styles.steps}>
-        <div className={styles.step}>
-          <span className={styles.stepNumber}>1</span>
-          <span>به تنظیمات گوشی بروید</span>
-        </div>
-        <div className={styles.step}>
-          <span className={styles.stepNumber}>2</span>
-          <span>گزینه NFC را فعال کنید</span>
-        </div>
-        <div className={styles.step}>
-          <span className={styles.stepNumber}>3</span>
-          <span>پشت گوشی را نزدیک تگ NFC کنید</span>
-        </div>
-      </div>
-    </div>
-    
-    <div className={styles.compatibleDevices}>
-      <p>سازگار با:</p>
-      <div className={styles.deviceIcons}>
-        <FaApple className={styles.deviceIcon} title="iPhone" />
-        <FaAndroid className={styles.deviceIcon} title="Android" />
-        <FaMobileAlt className={styles.deviceIcon} title="سایر موبایل‌ها" />
-      </div>
+      <FaNfcSymbol size={80} color="#8B4513" /> {/* آیکون NFC بزرگ‌تر */}
     </div>
   </div>
 </div>
-{/* سپس کارت‌های ویژه قبلی */}
+
 <div className={`${styles.menuCard} ${styles.specialCard}`}>
   <h2>مدت زمان سرو سفارش 45 دقیقه می باشد</h2>
 </div>
