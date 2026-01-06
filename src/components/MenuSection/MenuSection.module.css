@@ -1,46 +1,81 @@
-/* ========== استایل اصلی تخته سیاه ========== */
+/* MenuSection.module.css - استایل تخته سیاه کافه */
+
 .menuBoard {
-  background-color: #0a0a0a;
-  background-image: 
-    repeating-linear-gradient(0deg, transparent, transparent 2px, 
-    rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px),
-    linear-gradient(to bottom, #121212, #000000);
+  /* بک‌گراند تخته سیاه */
+  background-image: url('/public/photo/backgrund.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* افکت پارالکس ملایم */
+  background-repeat: no-repeat;
+  
+  /* تضمین پوشش کامل */
   min-height: 100vh;
-  padding: 0;
-  font-family: 'Georgia', 'Times New Roman', serif;
-  color: #f0e6d2;
-  line-height: 1.6;
-}
-
-/* ========== تصویر اصلی بالا ========== */
-.mainHeaderImage {
   width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  display: block;
-  border-bottom: 3px solid #333;
+  
+  /* رنگ و فونت سنتی */
+  color: #f0e6d2; /* رنگ گچی/کرم */
+  font-family: 'Georgia', 'Times New Roman', 'B Nazanin', serif;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  
+  /* حذف حاشیه‌های پیش‌فرض */
+  padding: 0;
+  margin: 0;
 }
 
-/* ========== کانتینر کارت‌ها ========== */
+/* لایه شفاف برای افزایش خوانایی روی عکس */
+.menuBoard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 10, 0.4); /* لایه مشکی شفاف */
+  z-index: 1;
+}
+
+/* کانتینر اصلی - بالای لایه شفاف */
 .menuColumns {
+  position: relative;
+  z-index: 2;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 30px 20px 50px;
 }
 
-/* ========== کارت منو - چیدمان FLEX (عکس چپ، متن راست) ========== */
+/* ========== استایل کارت‌های منو ========== */
 .menuCard {
-  background: rgba(20, 20, 20, 0.9);
-  border: 1px solid #444;
-  border-left: 5px solid #8B7355; /* حاشیه چپ طلایی/چوبی */
-  border-radius: 2px;
-  margin: 30px 0;
+  /* زمینه کارت با شفافیت */
+  background: rgba(30, 30, 30, 0.85);
+  backdrop-filter: blur(8px); /* افکت شیشه‌ای */
+  
+  /* حاشیه و سایه */
+  border: 2px solid #555;
+  border-left: 6px solid #8B4513; /* حاشیه چوبی/قهوه‌ای */
+  border-radius: 8px;
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  
+  /* فاصله‌گذاری */
+  margin: 25px 0;
   padding: 25px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+  
+  /* ترنزیشن ملایم */
+  transition: all 0.3s ease;
 }
 
-/* چیدمان عکس و متن کنار هم */
+/* افکت هنگام هاور */
+.menuCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 12px 30px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border-left-color: #A0522D; /* تغییر رنگ حاشیه */
+}
+
+/* ========== چیدمان عکس و متن ========== */
 .cardContent {
   display: flex;
   flex-direction: row;
@@ -48,65 +83,80 @@
   gap: 30px;
 }
 
-/* باکس تصویر در سمت چپ */
+/* باکس تصویر (سمت چپ) */
 .imageContainer {
   flex-shrink: 0;
-  width: 280px; /* اینجا سایز عکس را تغییر دهید */
-  border: 2px solid #555;
-  border-radius: 3px;
+  width: 250px; /* عرض ثابت - قابل تنظیم */
+  
+  /* قاب عکس */
+  border: 3px solid #666;
+  border-radius: 6px;
   overflow: hidden;
   background: #000;
+  
+  /* سایه داخلی */
+  box-shadow: 
+    inset 0 0 10px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .categoryImage {
   width: 100%;
-  height: auto;
+  height: 180px; /* ارتفاع ثابت برای همه عکس‌ها */
+  object-fit: cover;
   display: block;
-  transition: opacity 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
-.categoryImage:hover {
-  opacity: 0.9;
+/* افکت زوم ملایم */
+.imageContainer:hover .categoryImage {
+  transform: scale(1.05);
 }
 
-/* باکس متن در سمت راست */
+/* ========== بخش متن (سمت راست) ========== */
 .textContainer {
   flex: 1;
   padding-top: 5px;
 }
 
-/* ========== استایل‌های متن ========== */
 /* عنوان هر بخش */
 .sectionTitle {
-  font-size: 2.2em;
+  font-size: 2em;
   color: #f0e6d2;
-  margin: 0 0 25px 0;
+  margin: 0 0 20px 0;
   padding-bottom: 12px;
-  border-bottom: 1px dashed #666;
-  text-align: right;
-  font-weight: normal;
-  text-shadow: 1px 1px 2px #000;
-  font-family: inherit;
+  border-bottom: 2px solid #8B4513; /* خط زیر عنوان */
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
-/* لیست آیتم‌ها */
+/* لیست منو */
 .menuList {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
 }
 
+/* هر آیتم منو */
 .menuItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 0;
-  border-bottom: 1px dotted #444;
-  font-size: 1.15em;
+  padding: 12px 15px;
+  background: rgba(40, 40, 40, 0.7);
+  border-radius: 6px;
+  border-left: 4px solid #666;
+  transition: all 0.2s ease;
 }
 
-.menuItem:last-child {
-  border-bottom: none;
+.menuItem:hover {
+  background: rgba(50, 50, 50, 0.8);
+  border-left-color: #f0e6d2;
+  transform: translateX(5px);
 }
 
 /* نام آیتم */
@@ -114,104 +164,139 @@
   color: #f0e6d2;
   text-align: right;
   flex-grow: 1;
-  padding-left: 20px;
+  padding-left: 15px;
+  font-size: 1.1em;
 }
 
-/* قیمت آیتم - استایل سنتی ساده */
+/* قیمت - استایل سنتی */
 .itemPrice {
-  color: #f0e6d2; /* رنگ یکسان با متن (بدون رنگ طلایی) */
+  color: #f0e6d2;
   font-family: 'Courier New', monospace;
   font-size: 1.25em;
+  font-weight: bold;
   min-width: 70px;
   text-align: left;
   direction: ltr;
-  border: 1px solid #666;
-  padding: 3px 10px;
-  border-radius: 2px;
+  
+  /* قاب سنتی برای قیمت */
+  border: 1px solid #777;
+  padding: 5px 12px;
+  border-radius: 4px;
   background: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* ========== کارت‌های ویژه ========== */
-/* کارت مدت زمان و اینستاگرام */
 .specialCard {
   text-align: center;
-  background: rgba(10, 10, 10, 0.95);
+  background: rgba(20, 20, 20, 0.9);
   border: 2px dashed #666;
-  padding: 35px 25px;
-  margin: 40px 0;
+  padding: 30px;
+  margin: 35px 0;
   font-style: italic;
 }
 
 .specialCard h2 {
-  font-size: 1.9em;
+  font-size: 1.8em;
   color: #ccc;
   margin: 0;
   font-weight: normal;
 }
 
-/* آیکون اینستاگرام */
 .instagramIcon {
   color: #E4405F;
-  margin-right: 10px;
-  font-size: 1.4em;
+  margin-right: 12px;
+  font-size: 1.3em;
   vertical-align: middle;
 }
 
+.menuIcon {
+  margin-left: 15px;
+  vertical-align: middle;
+  color: #8B4513; /* رنگ قهوه‌ای/طلایی */
+  font-size: 1.3em;
+}
+
+/* استایل کارت QR Code */
+.qrContainer {
+  text-align: center;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 2px solid rgba(139, 69, 19, 0.3);
+  margin: 20px 0;
+}
+
+.qrText {
+  margin-top: 20px;
+  color: #f0e6d2;
+  font-size: 0.95em;
+  line-height: 1.6;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* اگر می‌خواهید QR Code در موبایل کوچک‌تر باشد */
+@media (max-width: 768px) {
+  .qrContainer {
+    padding: 20px;
+  }
+  
+  .qrText {
+    font-size: 0.9em;
+    padding: 0 10px;
+  }
+}
+
 /* ========== ریسپانسیو ========== */
-/* تبلت */
-@media (max-width: 992px) {
+@media (max-width: 1100px) {
+  .menuList {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
   .cardContent {
     flex-direction: column;
+    gap: 25px;
   }
   
   .imageContainer {
     width: 100%;
-    max-width: 450px;
-    margin: 0 auto 25px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .categoryImage {
+    height: 200px;
   }
   
   .sectionTitle {
     text-align: center;
+    font-size: 1.8em;
   }
   
   .menuColumns {
     padding: 20px 15px;
   }
-}
-
-/* موبایل */
-@media (max-width: 768px) {
+  
   .menuCard {
     padding: 20px;
-    margin: 25px 0;
-  }
-  
-  .sectionTitle {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-  }
-  
-  .cardContent {
-    gap: 20px;
-  }
-  
-  .itemPrice {
-    font-size: 1.15em;
-    min-width: 60px;
-    padding: 2px 8px;
+    margin: 20px 0;
   }
 }
 
-@media (max-width: 576px) {
-  .menuColumns {
-    padding: 15px 10px;
+@media (max-width: 480px) {
+  .menuList {
+    grid-template-columns: 1fr;
   }
   
   .menuItem {
     flex-direction: column;
     align-items: flex-end;
     text-align: right;
-    padding: 16px 0;
+    padding: 15px;
   }
   
   .itemName {
@@ -222,7 +307,7 @@
   
   .itemPrice {
     align-self: flex-end;
-    margin-top: 5px;
+    font-size: 1.2em;
   }
   
   .specialCard {
@@ -230,6 +315,6 @@
   }
   
   .specialCard h2 {
-    font-size: 1.6em;
+    font-size: 1.5em;
   }
 }

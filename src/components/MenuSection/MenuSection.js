@@ -1,30 +1,42 @@
 import React from "react";
 import styles from "./MenuSection.module.css"; 
-
+import { QRCodeSVG } from "qrcode.react";
+import { FaNfcSymbol } from "react-icons/fa6";
+import {
+  FaCoffee,
+  FaSnowflake,
+  FaFire,
+  FaIceCream,
+  FaCocktail,
+  FaLeaf,
+  FaAppleAlt,
+  FaPizzaSlice,
+  FaUtensils,
+  FaHamburger,
+  FaBirthdayCake,
+  FaBacon,
+  FaGlassMartiniAlt,
+  FaQrcode,
+  FaWaveSquare,     // آیکون NF      
+  FaApple,          // لوگو اپل
+  FaAndroid,        // لوگو اندروید
+  FaMobileAlt       // موبایل عمومی
+} from "react-icons/fa";
 function MenuSection() {
   return (
     <div className={styles.menuBoard}>
-      <img 
-        src="/photo/menu.jpg"
-        alt="Cafe Rizhvan Header"
-        className={styles.mainHeaderImage}
-      />
+     
 
       <div className={styles.menuColumns}>
         
         {/* دسته 1: قهوه گرم */}
         <div className={styles.menuCard}>
-          <div className={styles.cardContent}>
-            <div className={styles.imageContainer}>
-              <img 
-                src="/photo/cofee hot.jpg" 
-                alt="Hot Coffee"
-                className={styles.categoryImage}
-              />
-            </div>
-            
+          <div className={styles.cardContent}> 
             <div className={styles.textContainer}>
-              <h2 className={styles.sectionTitle}>قهوه گرم</h2>
+              <h2 className={styles.sectionTitle}>
+                <FaCoffee className={styles.menuIcon} />
+                 قهوه گرم
+              </h2>
               <ul className={styles.menuList}>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>اسپرسو تک</span>
@@ -50,16 +62,13 @@ function MenuSection() {
         {/* دسته 2: قهوه سرد */}
         <div className={styles.menuCard}>
           <div className={styles.cardContent}>
-            <div className={styles.imageContainer}>
-              <img 
-                src="/photo/drink cold.jpg" 
-                alt="Cold Coffee"
-                className={styles.categoryImage}
-              />
-            </div>
+         
             
             <div className={styles.textContainer}>
-              <h2 className={styles.sectionTitle}>قهوه سرد</h2>
+              <h2 className={styles.sectionTitle}>
+            <FaSnowflake className={styles.menuIcon} />
+           قهوه  سرد
+          </h2>
               <ul className={styles.menuList}>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>آیس آمریکانو</span>
@@ -93,16 +102,13 @@ function MenuSection() {
         {/* دسته 3: نوشیدنی های گرم */}
         <div className={styles.menuCard}>
           <div className={styles.cardContent}>
-            <div className={styles.imageContainer}>
-              <img 
-                src="/photo/drink hot.jpg" 
-                alt="Hot Drinks"
-                className={styles.categoryImage}
-              />
-            </div>
+            
             
             <div className={styles.textContainer}>
-              <h2 className={styles.sectionTitle}>نوشیدنی های گرم</h2>
+              <h2 className={styles.sectionTitle}>
+                <FaFire className={styles.menuIcon} />
+                  نوشیدنی های گرم
+              </h2>
               <ul className={styles.menuList}>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>کارامل ماکیاتو</span>
@@ -164,16 +170,13 @@ function MenuSection() {
         {/* دسته 4: شیک بستنی */}
         <div className={styles.menuCard}>
           <div className={styles.cardContent}>
-            <div className={styles.imageContainer}>
-              <img 
-                src="/photo/shake.jpg" 
-                alt="Ice Cream Shake"
-                className={styles.categoryImage}
-              />
-            </div>
+           
             
             <div className={styles.textContainer}>
-              <h2 className={styles.sectionTitle}>شیک بستنی</h2>
+              <h2 className={styles.sectionTitle}>
+               <FaIceCream className={styles.menuIcon} />
+                شیک بستنی
+              </h2>
               <ul className={styles.menuList}>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>نوتلا</span>
@@ -255,16 +258,13 @@ function MenuSection() {
         {/* دسته 5: اسموتی */}
         <div className={styles.menuCard}>
           <div className={styles.cardContent}>
-            <div className={styles.imageContainer}>
-              <img 
-                src="/photo/smooti.jpg" 
-                alt="Smoothie"
-                className={styles.categoryImage}
-              />
-            </div>
+         
             
             <div className={styles.textContainer}>
-              <h2 className={styles.sectionTitle}>اسموتی</h2>
+              <h2 className={styles.sectionTitle}>
+  <FaGlassMartiniAlt className={styles.menuIcon} />
+  اسموتی
+</h2>
               <ul className={styles.menuList}>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>موز انبه</span>
@@ -298,16 +298,13 @@ function MenuSection() {
         {/* دسته 6: دمنوش گیاهی */}
         <div className={styles.menuCard}>
           <div className={styles.cardContent}>
-            <div className={styles.imageContainer}>
-              <img 
-                src="/photo/damnoosh.jpg" 
-                alt="Herbal Tea"
-                className={styles.categoryImage}
-              />
-            </div>
+           
             
             <div className={styles.textContainer}>
-              <h2 className={styles.sectionTitle}>دمنوش گیاهی</h2>
+              <h2 className={styles.sectionTitle}>
+  <FaLeaf className={styles.menuIcon} />
+  دمنوش گیاهی
+</h2>
               <ul className={styles.menuList}>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>دمنوش ریژوان</span>
@@ -365,16 +362,13 @@ function MenuSection() {
         {/* دسته 7: آب میوه */}
         <div className={styles.menuCard}>
           <div className={styles.cardContent}>
-            <div className={styles.imageContainer}>
-              <img 
-                src="/photo/ab mive.jpg" 
-                alt="Juice"
-                className={styles.categoryImage}
-              />
-            </div>
+            
             
             <div className={styles.textContainer}>
-              <h2 className={styles.sectionTitle}>آب میوه</h2>
+              <h2 className={styles.sectionTitle}>
+  <FaAppleAlt className={styles.menuIcon} />
+  آب میوه
+</h2>
               <ul className={styles.menuList}>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>آب طالبی بستنی</span>
@@ -440,16 +434,13 @@ function MenuSection() {
         {/* دسته 8: پیتزا */}
         <div className={styles.menuCard}>
           <div className={styles.cardContent}>
-            <div className={styles.imageContainer}>
-              <img 
-                src="/photo/pizza.jpg"
-                alt="Pizza"
-                className={styles.categoryImage}
-              />
-            </div>
+            
             
             <div className={styles.textContainer}>
-              <h2 className={styles.sectionTitle}>پیتزا</h2>
+              <h2 className={styles.sectionTitle}>
+  <FaPizzaSlice className={styles.menuIcon} />
+  پیتزا
+</h2>
               <ul className={styles.menuList}>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>پیتزا ریژوان</span>
@@ -475,16 +466,13 @@ function MenuSection() {
         {/* دسته 9: پاستا */}
         <div className={styles.menuCard}>
           <div className={styles.cardContent}>
-            <div className={styles.imageContainer}>
-              <img 
-                src="/photo/pasta.jpg" 
-                alt="Pasta"
-                className={styles.categoryImage}
-              />
-            </div>
+        
             
             <div className={styles.textContainer}>
-              <h2 className={styles.sectionTitle}>پاستا</h2>
+              <h2 className={styles.sectionTitle}>
+  <FaUtensils className={styles.menuIcon} />
+  پاستا
+</h2>
               <ul className={styles.menuList}>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>پاستا</span>
@@ -522,16 +510,13 @@ function MenuSection() {
         {/* دسته 10: فست فود */}
         <div className={styles.menuCard}>
           <div className={styles.cardContent}>
-            <div className={styles.imageContainer}>
-              <img 
-                src="/photo/fastfood.jpg" 
-                alt="Fast Food"
-                className={styles.categoryImage}
-              />
-            </div>
+           
             
             <div className={styles.textContainer}>
-              <h2 className={styles.sectionTitle}>فست فود</h2>
+              <h2 className={styles.sectionTitle}>
+  <FaHamburger className={styles.menuIcon} />
+  فست فود
+</h2>
               <ul className={styles.menuList}>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>سیب زمینی سرخ کرده</span>
@@ -561,16 +546,13 @@ function MenuSection() {
         {/* دسته 11: کیک و شیرینی */}
         <div className={styles.menuCard}>
           <div className={styles.cardContent}>
-            <div className={styles.imageContainer}>
-              <img 
-                src="/photo/kayk.jpg" 
-                alt="Cake"
-                className={styles.categoryImage}
-              />
-            </div>
+            
             
             <div className={styles.textContainer}>
-              <h2 className={styles.sectionTitle}>کیک و شیرینی</h2>
+              <h2 className={styles.sectionTitle}>
+  <FaBirthdayCake className={styles.menuIcon} />
+  کیک و شیرینی
+</h2>
               <ul className={styles.menuList}>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>کیک روز</span>
@@ -588,16 +570,13 @@ function MenuSection() {
         {/* دسته 12: صبحانه */}
         <div className={styles.menuCard}>
           <div className={styles.cardContent}>
-            <div className={styles.imageContainer}>
-              <img 
-                src="/photo/breakfast.jpg" 
-                alt="Breakfast"
-                className={styles.categoryImage}
-              />
-            </div>
+          
             
             <div className={styles.textContainer}>
-              <h2 className={styles.sectionTitle}>صبحانه</h2>
+              <h2 className={styles.sectionTitle}>
+  <FaBacon className={styles.menuIcon} />
+  صبحانه
+</h2>
               <ul className={styles.menuList}>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>خرما تخم مرغ</span>
@@ -639,16 +618,13 @@ function MenuSection() {
         {/* دسته 13: ماکیتل */}
         <div className={styles.menuCard}>
           <div className={styles.cardContent}>
-            <div className={styles.imageContainer}>
-              <img 
-                src="/photo/makiatel.jpg" 
-                alt="Mocktail"
-                className={styles.categoryImage}
-              />
-            </div>
+           
             
             <div className={styles.textContainer}>
-              <h2 className={styles.sectionTitle}>ماکیتل</h2>
+            <h2 className={styles.sectionTitle}>
+  <FaCocktail className={styles.menuIcon} />
+  ماکیتل
+</h2>
               <ul className={styles.menuList}>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>ریژوان</span>
@@ -682,6 +658,78 @@ function MenuSection() {
             </div>
           </div>
         </div>
+
+        
+
+{/* کارت QR Code */}
+<div className={styles.menuCard}>
+  <h2 className={styles.sectionTitle}>
+    <FaQrcode className={styles.menuIcon} />
+    اسکن برای منوی دیجیتال
+  </h2>
+  <div className={styles.qrContainer}>
+    <QRCodeSVG
+      value="https://cafe-rizhvan.ir/menu" 
+      size={180}
+      level="H"
+      includeMargin={true}
+      fgColor="#8B4513"  
+      bgColor="#f0e6d2"  
+    />
+    <p className={styles.qrText}>
+      برای مشاهده منوی به‌روز و سفارش آنلاین اسکن کنید
+    </p>
+  </div>
+</div>
+
+
+{/*NFC*/}
+<div className={styles.menuCard}>
+  <h2 className={styles.sectionTitle}>
+    <FaWaveSquare className={styles.menuIcon} /> {/* آیکون NFC */}
+    منوی NFC
+  </h2>
+  <div className={styles.nfcContainer}>
+    <div className={styles.nfcIcon}>
+      <FaNfcSymbol size={60} color="#8B4513" /> {/* آیکون بزرگ NFC */}
+    </div>
+    <p className={styles.nfcText}>
+      <strong>منوی کافه را با NFC دریافت کنید</strong><br/>
+      گوشی خود را نزدیک تگ NFC روی میز نگه دارید
+    </p>
+    
+    <div className={styles.instructions}>
+      <h4>روش فعال‌سازی NFC:</h4>
+      <div className={styles.steps}>
+        <div className={styles.step}>
+          <span className={styles.stepNumber}>1</span>
+          <span>به تنظیمات گوشی بروید</span>
+        </div>
+        <div className={styles.step}>
+          <span className={styles.stepNumber}>2</span>
+          <span>گزینه NFC را فعال کنید</span>
+        </div>
+        <div className={styles.step}>
+          <span className={styles.stepNumber}>3</span>
+          <span>پشت گوشی را نزدیک تگ NFC کنید</span>
+        </div>
+      </div>
+    </div>
+    
+    <div className={styles.compatibleDevices}>
+      <p>سازگار با:</p>
+      <div className={styles.deviceIcons}>
+        <FaApple className={styles.deviceIcon} title="iPhone" />
+        <FaAndroid className={styles.deviceIcon} title="Android" />
+        <FaMobileAlt className={styles.deviceIcon} title="سایر موبایل‌ها" />
+      </div>
+    </div>
+  </div>
+</div>
+{/* سپس کارت‌های ویژه قبلی */}
+<div className={`${styles.menuCard} ${styles.specialCard}`}>
+  <h2>مدت زمان سرو سفارش 45 دقیقه می باشد</h2>
+</div>
 
         {/* کارت مدت زمان سرو */}
         <div className={`${styles.menuCard} ${styles.specialCard}`}>
