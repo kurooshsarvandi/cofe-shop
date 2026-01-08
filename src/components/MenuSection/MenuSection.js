@@ -677,7 +677,6 @@ function MenuSection() {
   </div>
 </div>
 
-
 {/*NFC*/}
 <div className={styles.menuCard}>
   <div className={styles.nfcContainer}>

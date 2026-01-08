@@ -330,68 +330,235 @@
 }
 
 
-/* ========== چیدمان گریدی برای تلویزیون‌های بزرگ ========== */
+/* MenuSection.module.css - نسخه بهینه‌شده برای تلویزیون */
+
+/* ========== استایل پایه (بدون تغییر) ========== */
+.menuBoard {
+  background-image: url('/public/photo/backgrund.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  color: #f0e6d2;
+  font-family: 'Georgia', 'Times New Roman', 'B Nazanin', serif;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  padding: 0;
+  margin: 0;
+}
+
+.menuBoard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 10, 0.4);
+  z-index: 1;
+}
+
+.menuColumns {
+  position: relative;
+  z-index: 2;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 30px 20px 50px;
+}
+
+/* ========== تغییرات اصلی برای تلویزیون ========== */
+/* چیدمان فشرده برای تلویزیون‌های بزرگ */
 @media (min-width: 1920px) {
   .menuColumns {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 ستون کنار هم */
-    gap: 40px;
-    max-width: 1800px;
-    padding: 50px 40px;
+    grid-template-columns: repeat(4, 1fr); /* 4 ستون برای فشردگی بیشتر */
+    gap: 25px; /* فاصله کمتر بین کارت‌ها */
+    max-width: 95vw; /* استفاده از درصد بیشتری از عرض صفحه */
+    padding: 30px 20px;
   }
   
+  /* کوچک‌کردن کلی کارت‌ها */
   .menuCard {
-    margin: 0; /* حذف margin عمودی */
-    height: fit-content;
-    min-height: 350px; /* ارتفاع مناسب برای هر کارت */
+    margin: 0;
+    padding: 18px; /* کاهش padding */
+    min-height: auto; /* حذف حداقل ارتفاع ثابت */
+    height: auto;
+    background: rgba(25, 25, 25, 0.9); /* کمی تیره‌تر برای کنتراست بهتر */
   }
   
-  /* تنظیمات فونت برای تلویزیون */
-  .menuBoard {
-    font-size: 1.3em;
-  }
-  
+  /* کوچک کردن عنوان */
   .sectionTitle {
-    font-size: 2.2em;
-    margin-bottom: 25px;
+    font-size: 1.5em; /* کاهش سایز */
+    margin: 0 0 15px 0;
+    padding-bottom: 8px;
+    border-bottom-width: 1px;
   }
   
+  /* لیست آیتم‌های منو فشرده‌تر */
   .menuList {
-    grid-template-columns: 1fr; /* آیتم‌ها در یک ستون */
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  /* آیتم‌های منو کوچک‌تر */
+  .menuItem {
+    padding: 8px 12px;
+    min-height: 55px;
+    font-size: 1em;
     gap: 15px;
   }
   
-  .menuItem {
-    padding: 18px 20px;
-    min-height: 80px;
-    font-size: 1.2em;
-  }
-  
+  /* نام آیتم کوچک‌تر */
   .itemName {
-    font-size: 1.3em;
+    font-size: 0.95em;
+    padding-left: 10px;
   }
   
+  /* ========== تغییرات قیمت ========== */
+  /* بک‌گراند شیشه‌ای با نوشته تیره */
   .itemPrice {
-    font-size: 1.5em;
-    min-width: 100px;
+    font-size: 1.1em;
+    min-width: 65px;
+    padding: 6px 10px;
+    color: #222; /* نوشته تیره */
+    background: rgba(255, 255, 255, 0.85); /* بک‌گراند شیشه‌ای روشن */
+    backdrop-filter: blur(10px); /* افکت شیشه‌ای */
+    border: 1px solid rgba(139, 69, 19, 0.4); /* حاشیه قهوه‌ای کمرنگ */
+    box-shadow: 
+      inset 0 1px 3px rgba(255, 255, 255, 0.6),
+      0 2px 5px rgba(0, 0, 0, 0.2);
   }
   
-  /* کارت‌های ویژه در کل عرض */
+  /* حذف تصویر در نسخه تلویزیون برای صرفه‌جویی در فضا */
+  .imageContainer {
+    display: none;
+  }
+  
+  .cardContent {
+    gap: 0;
+  }
+  
+  /* کارت‌های ویژه */
   .specialCard,
   .menuCard:has(.qrContainer),
   .menuCard:has(.nfcContainer) {
-    grid-column: 1 / -1; /* کشیده شدن در دو ستون */
+    grid-column: span 2; /* نصف عرض */
+    padding: 20px;
+  }
+  
+  .specialCard h2 {
+    font-size: 1.4em;
+  }
+  
+  .qrContainer {
+    padding: 15px;
+  }
+  
+  /* کاهش سایز آیکون‌ها */
+  .menuIcon {
+    font-size: 1.1em;
+    margin-left: 10px;
   }
 }
 
-/* برای صفحه‌های عریض‌تر (تلویزیون‌های 4K بزرگ) */
+/* تنظیمات برای تلویزیون‌های 4K */
 @media (min-width: 2500px) {
   .menuColumns {
-    grid-template-columns: repeat(3, 1fr); /* 3 ستون برای صفحه‌های بسیار عریض */
+    grid-template-columns: repeat(5, 1fr); /* 5 ستون در صفحه‌های عریض */
+    gap: 30px;
     max-width: 2400px;
   }
   
   .sectionTitle {
-    font-size: 2.5em;
+    font-size: 1.6em;
   }
+  
+  .specialCard,
+  .menuCard:has(.qrContainer),
+  .menuCard:has(.nfcContainer) {
+    grid-column: span 3; /* تنظیم مجدد برای 5 ستون */
+  }
+}
+
+/* ========== هماهنگی با تم رنگی سایت ========== */
+/* شما باید رنگ‌های اصلی سایت خود را در اینجا قرار دهید */
+/* این فقط یک مثال است - رنگ‌ها را با سایت خود جایگزین کنید */
+
+/* رنگ اصلی سایت (مثال: آبی) */
+:root {
+  --primary-color: #2563eb;    /* آبی اصلی */
+  --primary-dark: #1d4ed8;     /* آبی تیره */
+  --primary-light: #60a5fa;    /* آبی روشن */
+  --accent-color: #f59e0b;     /* نارنجی/طلایی برای تاکید */
+  --text-light: #f8fafc;       /* متن روشن */
+  --text-dark: #1e293b;        /* متن تیره */
+  --glass-bg: rgba(255, 255, 255, 0.85); /* بک‌گراند شیشه‌ای */
+}
+
+/* اعمال تم رنگی سایت روی عناصر */
+@media (min-width: 1920px) {
+  .menuCard {
+    border-left-color: var(--primary-color); /* استفاده از رنگ اصلی سایت */
+  }
+  
+  .menuCard:hover {
+    border-left-color: var(--accent-color); /* رنگ تاکید در هاور */
+  }
+  
+  .sectionTitle {
+    color: var(--text-light);
+    border-bottom-color: var(--primary-light);
+  }
+  
+  .itemName {
+    color: var(--text-light);
+  }
+  
+  .specialCard {
+    background: rgba(37, 99, 235, 0.1); /* شفافیت با رنگ اصلی */
+    border: 2px dashed var(--primary-light);
+  }
+  
+  .specialCard h2 {
+    color: var(--primary-light);
+  }
+  
+  .instagramIcon {
+    color: var(--accent-color);
+  }
+  
+  .menuIcon {
+    color: var(--accent-color);
+  }
+  
+  /* قیمت‌ها با تم سایت */
+  .itemPrice {
+    color: var(--text-dark);
+    background: var(--glass-bg);
+    border-color: var(--primary-light);
+    font-weight: bold;
+  }
+  
+  .qrContainer {
+    border-color: var(--primary-color);
+    background: rgba(37, 99, 235, 0.05);
+  }
+}
+
+/* ========== ریسپانسیو برای موبایل و تبلت (بدون تغییر) ========== */
+@media (max-width: 1100px) {
+  .menuList {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* ... کدهای موجود ... */
+}
+
+@media (max-width: 480px) {
+  /* ... کدهای موجود ... */
 }
