@@ -18,9 +18,7 @@ import {
   FaGlassMartiniAlt,
   FaQrcode,
   FaWaveSquare,     // آیکون NF      
-  FaApple,          // لوگو اپل
-  FaAndroid,        // لوگو اندروید
-  FaMobileAlt       // موبایل عمومی
+  
 } from "react-icons/fa";
 function MenuSection() {
   return (
