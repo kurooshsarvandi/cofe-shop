@@ -342,11 +342,11 @@ function MenuSection() {
                 </li>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>چای دارچین</span>
-                  <span className={styles.itemPrice}>95</span>
+                  <span className={styles.itemPrice}>85</span>
                 </li>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>چای با گل محمدی</span>
-                  <span className={styles.itemPrice}>90</span>
+                  <span className={styles.itemPrice}>80</span>
                 </li>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>سفارشی</span>
@@ -386,15 +386,15 @@ function MenuSection() {
                 </li>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>آب اناناس</span>
-                  <span className={styles.itemPrice}>130</span>
+                  <span className={styles.itemPrice}>100</span>
                 </li>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>شیر موز بستنی</span>
-                  <span className={styles.itemPrice}>110</span>
+                  <span className={styles.itemPrice}>150</span>
                 </li>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>شیر موز</span>
-                  <span className={styles.itemPrice}>100</span>
+                  <span className={styles.itemPrice}>130</span>
                 </li>
                 <li className={styles.menuItem}>
                   <span className={styles.itemName}>آب پرتغال</span>
@@ -556,10 +556,7 @@ function MenuSection() {
                   <span className={styles.itemName}>کیک روز</span>
                   <span className={styles.itemPrice}>120</span>
                 </li>
-                <li className={styles.menuItem}>
-                  <span className={styles.itemName}>میل ندارم</span>
-                  <span className={styles.itemPrice}>60</span>
-                </li>
+              
               </ul>
             </div>
           </div>
@@ -692,6 +689,10 @@ function MenuSection() {
 
 <div className={`${styles.menuCard} ${styles.specialCard}`}>
   <h2>مدت زمان سرو سفارش 45 دقیقه می باشد</h2>
+    <li className={styles.menuItem}>
+       <span className={styles.itemName}>میل ندارم</span>
+       <span className={styles.itemPrice}>60</span>
+    </li>
 </div>
 
         {/* کارت مدت زمان سرو */}
