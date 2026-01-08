@@ -667,7 +667,7 @@ function MenuSection() {
   </h2>
   <div className={styles.qrContainer}>
     <QRCodeSVG
-      value="https://caferizhvan-vercel.app/#menu" 
+      value="https://caferizhvan.vercel.app/#menu" 
       size={180}
       level="H"
       includeMargin={true}
