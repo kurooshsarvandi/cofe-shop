@@ -330,107 +330,68 @@
 }
 
 
-/* ========== بهینه‌سازی برای تلویزیون‌های بزرگ (۴K و بالاتر) ========== */
+/* ========== چیدمان گریدی برای تلویزیون‌های بزرگ ========== */
 @media (min-width: 1920px) {
-  .menuBoard {
-    background-attachment: scroll; /* غیرفعال کردن پارالکس برای عملکرد بهتر */
-  }
-  
   .menuColumns {
-    max-width: 1800px; /* افزایش حداکثر عرض */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 ستون کنار هم */
+    gap: 40px;
+    max-width: 1800px;
     padding: 50px 40px;
   }
   
-  /* افزایش چشمگیر سایز فونت‌ها */
+  .menuCard {
+    margin: 0; /* حذف margin عمودی */
+    height: fit-content;
+    min-height: 350px; /* ارتفاع مناسب برای هر کارت */
+  }
+  
+  /* تنظیمات فونت برای تلویزیون */
   .menuBoard {
-    font-size: 1.3em; /* افزایش پایه فونت */
+    font-size: 1.3em;
   }
   
   .sectionTitle {
-    font-size: 3em; /* 50% بزرگتر از نسخه دسکتاپ */
-    margin-bottom: 40px;
-    padding-bottom: 20px;
+    font-size: 2.2em;
+    margin-bottom: 25px;
   }
   
   .menuList {
-    grid-template-columns: repeat(4, 1fr); /* 4 ستون در تلویزیون */
-    gap: 25px;
+    grid-template-columns: 1fr; /* آیتم‌ها در یک ستون */
+    gap: 15px;
   }
   
   .menuItem {
-    padding: 20px 25px;
-    min-height: 90px; /* ارتفاع بیشتر برای خوانایی */
+    padding: 18px 20px;
+    min-height: 80px;
     font-size: 1.2em;
-    border-left-width: 6px;
   }
   
   .itemName {
-    font-size: 1.4em;
-    padding-left: 25px;
+    font-size: 1.3em;
   }
   
   .itemPrice {
-    font-size: 1.6em;
+    font-size: 1.5em;
     min-width: 100px;
-    padding: 10px 20px;
   }
   
-  /* تصاویر بزرگتر و با کیفیت‌تر */
-  .imageContainer {
-    width: 350px;
-  }
-  
-  .categoryImage {
-    height: 250px;
-  }
-  
-  /* بهبود عناصر ویژه */
-  .specialCard {
-    padding: 50px;
-    margin: 50px 0;
-  }
-  
-  .specialCard h2 {
-    font-size: 2.5em;
-  }
-  
-  .qrContainer {
-    padding: 40px;
-    max-width: 500px;
-    margin: 40px auto;
-  }
-  
-  .qrText {
-    font-size: 1.2em;
-    max-width: 400px;
+  /* کارت‌های ویژه در کل عرض */
+  .specialCard,
+  .menuCard:has(.qrContainer),
+  .menuCard:has(.nfcContainer) {
+    grid-column: 1 / -1; /* کشیده شدن در دو ستون */
   }
 }
 
-/* برای تلویزیون‌های بسیار بزرگ (مانند ۸K) */
-@media (min-width: 3200px) {
+/* برای صفحه‌های عریض‌تر (تلویزیون‌های 4K بزرگ) */
+@media (min-width: 2500px) {
   .menuColumns {
-    max-width: 2500px;
-  }
-  
-  .menuList {
-    grid-template-columns: repeat(5, 1fr); /* 5 ستون در صفحه‌های عریض */
+    grid-template-columns: repeat(3, 1fr); /* 3 ستون برای صفحه‌های بسیار عریض */
+    max-width: 2400px;
   }
   
   .sectionTitle {
-    font-size: 3.5em;
-  }
-}
-
-/* بهینه‌سازی برای کنترل از راه دور (Pointer Coarse) */
-@media (pointer: coarse) {
-  .menuItem,
-  .menuCard,
-  .specialCard {
-    min-height: 100px; /* ناحیه کلیک بزرگتر */
-  }
-  
-  .menuItem:hover {
-    transform: translateX(8px); /* افکت بزرگتر برای تاکید بصری */
-    background: rgba(60, 60, 60, 0.9);
+    font-size: 2.5em;
   }
 }
