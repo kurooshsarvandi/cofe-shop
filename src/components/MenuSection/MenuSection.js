@@ -656,35 +656,7 @@ function MenuSection() {
 
         
 
-{/* کارت QR Code */}
-<div className={styles.menuCard}>
-  <h2 className={styles.sectionTitle}>
-    <FaQrcode className={styles.menuIcon} />
-    اسکن برای منوی دیجیتال
-  </h2>
-  <div className={styles.qrContainer}>
-    <QRCodeSVG
-      value="https://caferizhvan.vercel.app/#menu" 
-      size={180}
-      level="H"
-      includeMargin={true}
-      fgColor="#8B4513"  
-      bgColor="#f0e6d2"  
-    />
-    <p className={styles.qrText}>
-      برای مشاهده منوی به‌روز و سفارش آنلاین اسکن کنید
-    </p>
-  </div>
-</div>
 
-{/*NFC*/}
-<div className={styles.menuCard}>
-  <div className={styles.nfcContainer}>
-    <div className={styles.nfcIcon}>
-      <FaNfcSymbol size={80} color="#8B4513" /> {/* آیکون NFC بزرگ‌تر */}
-    </div>
-  </div>
-</div>
 
 <div className={`${styles.menuCard} ${styles.specialCard}`}>
   <h2>مدت زمان سرو سفارش 45 دقیقه می باشد</h2>
@@ -694,10 +666,7 @@ function MenuSection() {
     </li>
 </div>
 
-        {/* کارت مدت زمان سرو */}
-        <div className={`${styles.menuCard} ${styles.specialCard}`}>
-          <h2>مدت زمان سرو سفارش 45 دقیقه می باشد</h2>
-        </div>
+       
 
         {/* کارت اینستاگرام */}
         <div className={`${styles.menuCard} ${styles.specialCard}`}>
