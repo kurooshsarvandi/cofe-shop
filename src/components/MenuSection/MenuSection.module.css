@@ -142,7 +142,7 @@
  
   
   .menuColumns {
-    grid-template-columns: repeat(5, 1fr); /* 4 ستون ثابت */
+    grid-template-columns: repeat(6, 1fr); /* 4 ستون ثابت */
     gap: 30px;
     max-width: 90vw;
   }
