@@ -207,7 +207,7 @@
 /* برای لپ‌تاپ: 3 ستون */
 @media screen and (min-width: 900px) and (max-width: 1199px) {
   .menuColumns {
-    columns: 300px 3; /* 3 ستون */
+    columns: 300px 5; /* 3 ستون */
   }
 }
 
