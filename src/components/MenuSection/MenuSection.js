@@ -537,7 +537,7 @@ function MenuSection() {
               </h2>
               <ul className={styles.menuList}>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>120</span>
+                  <span className={styles.itemPrice}>160</span>
                   <span className={styles.itemName}>کیک روز</span>
                 </li>
               </ul>
