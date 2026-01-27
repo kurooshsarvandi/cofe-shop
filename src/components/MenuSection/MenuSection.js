@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./MenuSection.module.css"; 
-import { QRCodeSVG } from "qrcode.react";
-import { FaNfcSymbol } from "react-icons/fa6";
+
 import {
   FaCoffee,
   FaSnowflake,
@@ -16,8 +15,7 @@ import {
   FaBirthdayCake,
   FaBacon,
   FaGlassMartiniAlt,
-  FaQrcode,
-  FaWaveSquare,
+ 
 } from "react-icons/fa";
 
 function MenuSection() {

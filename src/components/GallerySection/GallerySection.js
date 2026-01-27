@@ -147,12 +147,7 @@ function GallerySection() {
     localStorage.setItem('cafeRizvanGallery', JSON.stringify(updatedPhotos));
   };
 
-  const clearAllPhotos = () => {
-    if (window.confirm('آیا از حذف تمام عکس‌ها اطمینان دارید؟')) {
-      setCustomerPhotos([]);
-      localStorage.removeItem('cafeRizvanGallery');
-    }
-  };
+  
 
   return (
     <section 
