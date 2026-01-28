@@ -200,7 +200,7 @@
 /* برای صفحات بزرگ: 4 ستون */
 @media screen and (min-width: 1200px) and (max-width: 1599px) {
   .menuColumns {
-    columns: 300px 4; /* 4 ستون */
+    columns: 300px 5; /* 4 ستون */
   }
 }
 
