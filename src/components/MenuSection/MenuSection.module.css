@@ -136,7 +136,7 @@
   }
   
   .menuColumns {
-    grid-template-columns: repeat(4, 1fr); /* 4 ستون ثابت */
+    grid-template-columns: repeat(8, 1fr); /* 4 ستون ثابت */
     gap: 30px;
     max-width: 90vw;
   }
@@ -172,7 +172,7 @@
 /* برای تلویزیون 4K (3840px به بالا) */
 @media screen and (min-width: 2561px) {
   .menuColumns {
-    grid-template-columns: repeat(5, 1fr); /* 5 ستون برای 4K */
+    grid-template-columns: repeat(3, 1fr); /* 5 ستون برای 4K */
     gap: 35px;
     max-width: 2400px;
   }
@@ -195,7 +195,7 @@
 /* تبلت افقی (1024px تا 1366px) */
 @media screen and (min-width: 1024px) and (max-width: 1599px) {
   .menuColumns {
-    grid-template-columns: repeat(3, 1fr); /* 3 ستون */
+    grid-template-columns: repeat(6, 1fr); /* 3 ستون */
     gap: 25px;
   }
   
@@ -229,7 +229,7 @@
   }
   
   .menuColumns {
-    grid-template-columns: 1fr; /* 1 ستون */
+    grid-template-columns: 7fr; /* 1 ستون */
     gap: 18px;
   }
   
@@ -264,93 +264,10 @@
   }
 }
 
-/* موبایل متوسط (376px تا 480px) - مثل iPhone 12, Galaxy S10 */
-@media screen and (min-width: 376px) and (max-width: 480px) {
-  .menuBoard {
-    padding: 15px 12px;
-  }
-  
-  .menuColumns {
-    gap: 15px;
-  }
-  
-  .menuCard {
-    padding: 18px;
-    border-radius: 12px;
-  }
-  
-  .sectionTitle {
-    font-size: 1.3em;
-    margin-bottom: 18px;
-  }
-  
-  .itemName {
-    font-size: 1em;
-  }
-  
-  .itemPrice {
-    font-size: 1.05em;
-    min-width: 65px;
-  }
-}
 
-/* موبایل کوچک (320px تا 375px) - مثل iPhone SE, Galaxy S8 */
-@media screen and (min-width: 320px) and (max-width: 375px) {
-  .menuBoard {
-    padding: 12px 10px;
-  }
-  
-  .menuCard {
-    padding: 16px;
-    border-radius: 10px;
-  }
-  
-  .sectionTitle {
-    font-size: 1.25em;
-  }
-  
-  .menuList {
-    padding: 0 5px;
-  }
-  
-  .menuItem {
-    padding: 10px 0;
-  }
-  
-  .itemName, .itemPrice {
-    padding: 0 3px;
-    font-size: 0.95em;
-  }
-  
-  /* کاهش فاصله خط نقطه‌چین */
-  .menuItem::after {
-    bottom: 10px;
-  }
-}
 
-/* گوشی‌های خیلی کوچک (کمتر از 320px) */
-@media screen and (max-width: 319px) {
-  .menuBoard {
-    padding: 10px 8px;
-  }
-  
-  .menuCard {
-    padding: 14px;
-  }
-  
-  .sectionTitle {
-    font-size: 1.15em;
-  }
-  
-  .itemName {
-    font-size: 0.9em;
-  }
-  
-  .itemPrice {
-    font-size: 0.95em;
-    min-width: 60px;
-  }
-}
+
+
 
 /* ---------- 4. تنظیمات جهت (Orientation) ---------- */
 /* حالت افقی (Landscape) موبایل‌ها */
