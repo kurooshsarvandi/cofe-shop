@@ -56,7 +56,7 @@ function MenuSection() {
                   <span className={styles.itemName}>چایی پسته</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>110</span>
+                  <span className={styles.itemPrice}>125</span>
                   <span className={styles.itemName}>اورج کاپو</span>
                 </li>
                 <li className={styles.menuItem}>
@@ -68,7 +68,7 @@ function MenuSection() {
                   <span className={styles.itemName}>آمریکانو</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>140</span>
+                  <span className={styles.itemPrice}>145</span>
                   <span className={styles.itemName}>نسکافه</span>
                 </li>
                 <li className={styles.menuItem}>
@@ -107,7 +107,7 @@ function MenuSection() {
                   <span className={styles.itemName}>گل گاو زبان</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>100</span>
+                  <span className={styles.itemPrice}>105</span>
                   <span className={styles.itemName}>آویشن</span>
                 </li>
                 <li className={styles.menuItem}>
@@ -127,15 +127,15 @@ function MenuSection() {
                   <span className={styles.itemName}>چای سبز</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>100</span>
+                  <span className={styles.itemPrice}>110</span>
                   <span className={styles.itemName}>چای ترش</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>100</span>
+                  <span className={styles.itemPrice}>110</span>
                   <span className={styles.itemName}>چای زعفرانی</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>85</span>
+                  <span className={styles.itemPrice}>90</span>
                   <span className={styles.itemName}>چای دارچین</span>
                 </li>
                 <li className={styles.menuItem}>
@@ -143,7 +143,7 @@ function MenuSection() {
                   <span className={styles.itemName}>چای با گل محمدی</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>105</span>
+                  <span className={styles.itemPrice}>120</span>
                   <span className={styles.itemName}>سفارشی</span>
                 </li>
               </ul>
@@ -163,7 +163,7 @@ function MenuSection() {
               </h2>
               <ul className={styles.menuList}>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>235</span>
+                  <span className={styles.itemPrice}>250</span>
                   <span className={styles.itemName}>نوتلا</span>
                 </li>
                 <li className={styles.menuItem}>
@@ -175,19 +175,19 @@ function MenuSection() {
                   <span className={styles.itemName}>شکلات موز</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>215</span>
+                  <span className={styles.itemPrice}>220</span>
                   <span className={styles.itemName}>شکلات دارک</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>210</span>
+                  <span className={styles.itemPrice}>215</span>
                   <span className={styles.itemName}>وانیل</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>225</span>
+                  <span className={styles.itemPrice}>215</span>
                   <span className={styles.itemName}>طالبی</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>210</span>
+                  <span className={styles.itemPrice}>215</span>
                   <span className={styles.itemName}>موز</span>
                 </li>
                 <li className={styles.menuItem}>
@@ -355,23 +355,23 @@ function MenuSection() {
                   <span className={styles.itemName}>آیس آمریکانو</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>105</span>
+                  <span className={styles.itemPrice}>145</span>
                   <span className={styles.itemName}>آیس لاته</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>125</span>
+                  <span className={styles.itemPrice}>135</span>
                   <span className={styles.itemName}>آیس کافی</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>135</span>
+                  <span className={styles.itemPrice}>145</span>
                   <span className={styles.itemName}>آیس موکا</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>105</span>
+                  <span className={styles.itemPrice}>110</span>
                   <span className={styles.itemName}>آفاگاتو</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>135</span>
+                  <span className={styles.itemPrice}>145</span>
                   <span className={styles.itemName}>ایس ماکیاتو</span>
                 </li>
               </ul>
@@ -431,19 +431,19 @@ function MenuSection() {
               </h2>
               <ul className={styles.menuList}>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>315</span>
+                  <span className={styles.itemPrice}>250-480</span>
                   <span className={styles.itemName}>پیتزا ریژوان</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>295</span>
+                  <span className={styles.itemPrice}>240-420</span>
                   <span className={styles.itemName}>پیتزا چیکن</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>275</span>
+                  <span className={styles.itemPrice}>260-430</span>
                   <span className={styles.itemName}>پیتزا پپرونی</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>255</span>
+                  <span className={styles.itemPrice}>220-390</span>
                   <span className={styles.itemName}>پیتزا مخلوط</span>
                 </li>
               </ul>
@@ -559,11 +559,11 @@ function MenuSection() {
                   <span className={styles.itemName}>خرما تخم مرغ</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>145-155</span>
+                  <span className={styles.itemPrice}>145-165</span>
                   <span className={styles.itemName}>سوسیس تخم مرغ</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>155-165</span>
+                  <span className={styles.itemPrice}>155-175</span>
                   <span className={styles.itemName}>سوسیس املت</span>
                 </li>
                 <li className={styles.menuItem}>
@@ -571,7 +571,7 @@ function MenuSection() {
                   <span className={styles.itemName}>نیمرو</span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>130-140</span>
+                  <span className={styles.itemPrice}>130-150</span>
                   <span className={styles.itemName}>املت</span>
                 </li>
                 <li className={styles.menuItem}>
@@ -637,7 +637,7 @@ function MenuSection() {
         <div className={`${styles.menuCard} ${styles.specialCard}`}>
           <h2>مدت زمان سرو سفارش 45 دقیقه می باشد</h2>
           <li className={styles.menuItem}>
-            <span className={styles.itemPrice}>60</span>
+            <span className={styles.itemPrice}>40</span>
             <span className={styles.itemName}>میل ندارم</span>
           </li>
         </div>
