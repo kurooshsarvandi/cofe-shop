@@ -130,10 +130,10 @@
 /* ===============================
    TV 55 inch - Full HD (1920x1080)
    =============================== */
-@media screen and (width: 3840px) and (height: 2160px) {
+@media screen and (width: 1280px) and (height: 800px) {
 
   body {
-    overflow: hidden; /* حذف اسکرول */
+     /* حذف اسکرول */
   }
 
   .menuBoard {
@@ -186,28 +186,22 @@
     border-left-width: 3px;
   }
 
- 
-  
-
-
- 
-
   
 }
 
 
 
 /* برای صفحات بزرگ: 4 ستون */
-@media screen and (min-width: 1200px) and (max-width: 1599px) {
+@media screen and (min-width: 1281px) and (max-width: 801px) {
   .menuColumns {
-    columns: 300px 5; /* 4 ستون */
+    columns: 300px 5 ; /* 4 ستون */
   }
 }
 
 /* برای لپ‌تاپ: 3 ستون */
 @media screen and (min-width: 900px) and (max-width: 1199px) {
   .menuColumns {
-    columns: 300px 5; /* 3 ستون */
+    columns: 300px 4; /* 3 ستون */
   }
 }
 
