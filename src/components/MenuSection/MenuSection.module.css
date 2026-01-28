@@ -211,7 +211,7 @@
   }
   
   .menuColumns {
-    grid-template-columns: repeat(2, 1fr); /* 2 ستون */
+    grid-template-columns: repeat(5, 1fr); /* 2 ستون */
     gap: 20px;
   }
   
@@ -361,7 +361,7 @@
   }
   
   .menuColumns {
-    grid-template-columns: repeat(2, 1fr); /* 2 ستون در حالت افقی */
+    grid-template-columns: repeat(5, 1fr); /* 2 ستون در حالت افقی */
     gap: 15px;
   }
   
