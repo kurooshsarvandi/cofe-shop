@@ -234,5 +234,11 @@
     min-width: 42px;
   }
 
+<<<<<<< HEAD
  
+=======
+  .specialCard {
+    column-span: ;
+  }
+>>>>>>> 8ff3452 (edit 11)
 }
