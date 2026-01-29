@@ -1,6 +1,4 @@
-/* MenuSection.module.css - نسخه نهایی با Columns */
-
-/* ========== استایل پایه ========== */
+/* ========== استایل پایه (بدون تغییر) ========== */
 .menuBoard {
   background-image: url('/public/photo/backgrund.jpg');
   background-size: cover;
@@ -14,231 +12,105 @@
   padding: 20px;
   margin: 0;
   box-sizing: border-box;
+  display: flex; /* اضافه شده برای تراز کردن محتوا در تلویزیون */
+  flex-direction: column;
 }
-
 
 .menuColumns {
-  max-width: 1400px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1600px;
   margin: 0 auto;
-  column-count: 4;      /* پیش‌فرض برای دسکتاپ */
-  column-gap: 20px;
 }
 
-/* ========== کارت‌های منو ========== */
+/* ========== کارت‌های منو (اصلاح جزئی برای انعطاف‌پذیری) ========== */
 .menuCard {
-  background: rgba( 2,33,23, 1);
+  background: rgba(2, 33, 23, 1);
   border-radius: 16px;
-  padding: 20px;
+  padding: 18px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
   border: 2px solid rgba(22, 12, 2, 0.1);
   color: #f0e6d2;
-  
-  /* کلید اصلی: جلوگیری از شکستن کارت بین ستون‌ها */
-  break-inside: avoid;
-  
-  /* نمایش به صورت بلوک در جریان */
- display: block;
-  min-width: 0;
-  width: 100%;
-  
-  /* فاصله عمودی بین کارت‌ها */
-  margin-bottom: 20px;
-}
-
-
-* {
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
 }
 
+/* ========== تنظیمات رسپانسیو دقیق ========== */
 
-
-.menuCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-  background: rgba(20, 20, 0.8);
-}
-
-/* ========== عنوان دسته‌ها ========== */
-.sectionTitle {
-  display: flex;
-  align-items: center;
-  font-size: 1.4em;
-  color: #e6dbd2;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #f0e6d2;
-}
-
-.menuIcon {
-  margin-left: 10px;
-  font-size: 1.3em;
-  color: #8B4513;
-}
-
-/* ========== لیست آیتم‌ها ========== */
-.menuList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menuItem {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 10px 0;
-  position: relative;
-}
-
-
-
-.itemName, .itemPrice {
-  position: relative;
-  z-index: 1;
-  padding: 0 8px;
-  background: rgba(20, 30, 30, 0.9);
-}
-
-.itemName {
-  color: #eff3ee;
-  font-size: 1.12em;
-  text-align: right;
-  flex: 1;
-  padding-left: 10px;
-  
-}
-
-.itemPrice {
-  color: #f8e303;
-  font-weight: 600;
-  font-size: 1.1em;
-  min-width: 60px;
-  text-align: left;
-  direction: ltr;
-  padding-right: 5px;
-}
-
-/* ========== کارت‌های ویژه ========== */
-.specialCard {
-  text-align: center;
-  background: rgba(60, 60, 60, 0.85);
-  border: 2px dashed rgba(255, 255, 255, 0.3);
-}
-
-.specialCard h2 {
-  color: #f8d702;
-  font-size: 1.2em;
-  margin-bottom: 15px;
-}
-
-/* موبایل خیلی کوچک */
+/* 1. موبایل‌های کوچک (زیر 480px) - نمایش تک ستونه */
 @media (max-width: 480px) {
   .menuColumns {
-    max-width: 100%;
+    flex-direction: column;
   }
-
-  .menuList {
-    grid-template-columns: 1fr;
+  .menuCard {
+    width: 100%;
   }
-}
-
-/* موبایل */
-@media (min-width: 481px) and (max-width: 768px) {
-  .menuColumns {
-    max-width: 100%;
-  }
-
-  .menuList {
-    grid-template-columns: repeat(2, 1fr);
+  .sectionTitle {
+    font-size: 1.2em;
   }
 }
 
-/* تبلت */
-@media (min-width: 769px) and (max-width: 1100px) {
-  .menuColumns {
-    max-width: 95%;
-  }
-
-  .menuList {
-    grid-template-columns: repeat(2, 1fr);
+/* 2. تبلت و موبایل بزرگ (481px تا 1024px) - دو ستونه */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .menuCard {
+    width: calc(50% - 20px); /* کسر کردن Gap */
   }
 }
 
-/* لپ‌تاپ */
-@media (min-width: 1101px) and (max-width: 1600px) {
-  .menuColumns {
-    max-width: 1400px;
-  }
-
-  .menuList {
-    grid-template-columns: repeat(3, 1fr);
+/* 3. دسکتاپ و لپ‌تاپ (1025px تا 1900px) - سه یا چهار ستونه */
+@media (min-width: 1025px) and (max-width: 1900px) {
+  .menuCard {
+    width: calc(25% - 20px);
   }
 }
 
-
-
-@media (min-width: 1601px) {
-
-  body {
-    
+/* 4. تلویزیون و مانیتورهای بزرگ (Ultra Wide / 4K / 55 inch) */
+/* در این بخش ابعاد را طوری تنظیم کردیم که اسکرول حذف شود */
+@media (min-width: 1901px) {
+  .menuBoard {
+    height: 100vh;
+    overflow: hidden; /* جلوگیری از اسکرول کلی */
+    padding: 10px;
+    justify-content: center;
   }
 
   .menuColumns {
-    max-width: none !important;
-    width: 100vw;
-    box-sizing: border-box;
-    column-count: 6;
-    column-gap: 12px;
-    padding: 12px;
+    max-width: 98vw;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; /* کارت‌ها به صورت ستونی کنار هم می‌چینند تا فضا پر شود */
+    align-content: center;
+    gap: 10px;
   }
 
   .menuCard {
-    break-inside: avoid;
-    margin: 0 0 12px 0;
-    padding: 1px;
-    width: 100%;
-    box-sizing: border-box;
-    min-width: 0 !important; 
-    outline: 2px solid yellow;  /* خیلی مهم */
-  }
-
-  
-
-  .imageContainer {
-    display: none;
-  }
-
-  .menuList {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4px;
-  }
-
-  .menuItem {
-    min-height: 34px;
-    padding: 4px 6px;
-    font-size: 0.78em;
+    width: calc(20% - 15px); /* نمایش ۵ ستونه در تلویزیون */
+    margin-bottom: 10px;
+    padding: 12px;
+    font-size: 0.85rem; /* کوچک کردن متن برای جا شدن همه موارد */
   }
 
   .sectionTitle {
-    font-size: 1.15em;
-    margin-bottom: 6px;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
   }
 
-  .itemName {
-    font-size: 0.78em;
+  .menuItem {
+    padding: 4px 0;
   }
 
-  .itemPrice {
-    font-size: 0.82em;
-    min-width: 42px;
-  }
+  .itemName { font-size: 0.95em; }
+  .itemPrice { font-size: 0.95em; }
+}
 
-<<<<<<< HEAD
- 
-=======
-  .specialCard {
-    column-span: ;
-  }
->>>>>>> 8ff3452 (edit 11)
+/* حذف استایل زرد اضافی که در کد قبلی برای تست بود */
+.menuCard {
+  outline: none !important;
 }
