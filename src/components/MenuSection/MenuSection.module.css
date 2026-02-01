@@ -50,7 +50,7 @@
 
 .menuCard {
 
-  background: rgba( 2,33,23, 1);
+  background: rgba(20, 20, 0.8);
 
   border-radius: 16px;
 
@@ -124,7 +124,7 @@
 
   align-items: center;
 
-  font-size: 1.4em;
+  font-size: 1.2em;
 
   color: #e6dbd2;
 
@@ -182,8 +182,6 @@
 
 
 
-
-
 .itemName, .itemPrice {
 
   position: relative;
@@ -200,9 +198,9 @@
 
 .itemName {
 
-  color: #eff3ee;
+  color: #f9f9f3;
 
-  font-size: 1.12em;
+  font-size: 1.2rem;
 
   text-align: right;
 
@@ -222,7 +220,7 @@
 
   font-weight: 600;
 
-  font-size: 1.1em;
+  font-size: 1.em;
 
   min-width: 60px;
 
@@ -354,9 +352,9 @@
 /* برای نمایشگرهای بزرگ و تلویزیون‌ها */
 @media (min-width: 1400px) { 
   .menuColumns {
-    max-width: 98% !important; /* استفاده از حداکثر فضا */
-    column-count: 6 !important; /* اجبار به ۶ ستونه شدن */
-    column-gap: 15px;
+    max-width: 100% !important; /* استفاده از حداکثر فضا */
+    column-count: 7!important; /* اجبار به ۶ ستونه شدن */
+    column-gap: 7px;
   }
 }
 
@@ -413,7 +411,7 @@
 
     padding: 4px 6px;
 
-    font-size: 0.78em;
+    font-size: 1.25em;
 
   }
 
@@ -445,4 +443,3 @@
 
   }
 
-}

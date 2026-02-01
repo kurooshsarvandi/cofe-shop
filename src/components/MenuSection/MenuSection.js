@@ -89,66 +89,20 @@ function MenuSection() {
         </div>
 
 
- {/* دسته 6: دمنوش گیاهی */}
-        <div className={styles.menuCard}>
-          <div className={styles.cardContent}>
-            <div className={styles.textContainer}>
-              <h2 className={styles.sectionTitle}>
-                <FaLeaf className={styles.menuIcon} />
-                دمنوش گیاهی
-              </h2>
-              <ul className={styles.menuList}>
-                <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>110</span>
-                  <span className={styles.itemName}>دمنوش ریژوان</span>
-                </li>
-                <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>105</span>
-                  <span className={styles.itemName}>گل گاو زبان</span>
-                </li>
-                <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>105</span>
-                  <span className={styles.itemName}>آویشن</span>
-                </li>
-                <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>100</span>
-                  <span className={styles.itemName}>به لیمو</span>
-                </li>
-                <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>100</span>
-                  <span className={styles.itemName}>بهار نارنج</span>
-                </li>
-                <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>100</span>
-                  <span className={styles.itemName}>استوایی</span>
-                </li>
-                <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>105</span>
-                  <span className={styles.itemName}>چای سبز</span>
-                </li>
-                <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>110</span>
-                  <span className={styles.itemName}>چای ترش</span>
-                </li>
-                <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>110</span>
-                  <span className={styles.itemName}>چای زعفرانی</span>
-                </li>
-                <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>90</span>
-                  <span className={styles.itemName}>چای دارچین</span>
-                </li>
-                <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>80</span>
-                  <span className={styles.itemName}>چای با گل محمدی</span>
-                </li>
-                <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>120</span>
-                  <span className={styles.itemName}>سفارشی</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+ {/* کارت مدت زمان سرو */}
+        <div className={`${styles.menuCard} ${styles.specialCard}`}>
+          <h2>مدت زمان سرو سفارش 45 دقیقه می باشد</h2>
+          <li className={styles.menuItem}>
+            <span className={styles.itemPrice}>40</span>
+            <span className={styles.itemName}>میل ندارم</span>
+          </li>
+        </div>
+
+        {/* کارت اینستاگرام */}
+        <div className={`${styles.menuCard} ${styles.specialCard}`}>
+          <h2>
+            cafe.rizhvan <i className={`bi bi-instagram ${styles.instagramIcon}`}></i>
+          </h2>
         </div>
 
 
@@ -240,7 +194,6 @@ function MenuSection() {
         </div>
 
 
-
  {/* دسته 7: آب میوه */}
         <div className={styles.menuCard}>
           <div className={styles.cardContent}>
@@ -311,6 +264,9 @@ function MenuSection() {
           </div>
         </div>
 
+
+
+
         {/* دسته 1: قهوه گرم */}
         <div className={styles.menuCard}>
           <div className={styles.cardContent}> 
@@ -335,6 +291,69 @@ function MenuSection() {
                 <li className={styles.menuItem}>
                   <span className={styles.itemPrice}>100</span>
                   <span className={styles.itemName}>فرانسه</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+{/* دسته 6: دمنوش گیاهی */}
+        <div className={styles.menuCard}>
+          <div className={styles.cardContent}>
+            <div className={styles.textContainer}>
+              <h2 className={styles.sectionTitle}>
+                <FaLeaf className={styles.menuIcon} />
+                دمنوش گیاهی
+              </h2>
+              <ul className={styles.menuList}>
+                <li className={styles.menuItem}>
+                  <span className={styles.itemPrice}>110</span>
+                  <span className={styles.itemName}>دمنوش ریژوان</span>
+                </li>
+                <li className={styles.menuItem}>
+                  <span className={styles.itemPrice}>105</span>
+                  <span className={styles.itemName}>گل گاو زبان</span>
+                </li>
+                <li className={styles.menuItem}>
+                  <span className={styles.itemPrice}>105</span>
+                  <span className={styles.itemName}>آویشن</span>
+                </li>
+                <li className={styles.menuItem}>
+                  <span className={styles.itemPrice}>100</span>
+                  <span className={styles.itemName}>به لیمو</span>
+                </li>
+                <li className={styles.menuItem}>
+                  <span className={styles.itemPrice}>100</span>
+                  <span className={styles.itemName}>بهار نارنج</span>
+                </li>
+                <li className={styles.menuItem}>
+                  <span className={styles.itemPrice}>100</span>
+                  <span className={styles.itemName}>استوایی</span>
+                </li>
+                <li className={styles.menuItem}>
+                  <span className={styles.itemPrice}>105</span>
+                  <span className={styles.itemName}>چای سبز</span>
+                </li>
+                <li className={styles.menuItem}>
+                  <span className={styles.itemPrice}>110</span>
+                  <span className={styles.itemName}>چای ترش</span>
+                </li>
+                <li className={styles.menuItem}>
+                  <span className={styles.itemPrice}>110</span>
+                  <span className={styles.itemName}>چای زعفرانی</span>
+                </li>
+                <li className={styles.menuItem}>
+                  <span className={styles.itemPrice}>90</span>
+                  <span className={styles.itemName}>چای دارچین</span>
+                </li>
+                <li className={styles.menuItem}>
+                  <span className={styles.itemPrice}>80</span>
+                  <span className={styles.itemName}>چای با گل محمدی</span>
+                </li>
+                <li className={styles.menuItem}>
+                  <span className={styles.itemPrice}>120</span>
+                  <span className={styles.itemName}>سفارشی</span>
                 </li>
               </ul>
             </div>
@@ -451,6 +470,7 @@ function MenuSection() {
           </div>
         </div>
 
+
         {/* دسته 9: پاستا */}
         <div className={styles.menuCard}>
           <div className={styles.cardContent}>
@@ -545,6 +565,9 @@ function MenuSection() {
           </div>
         </div>
 
+
+
+
         {/* دسته 12: صبحانه */}
         <div className={styles.menuCard}>
           <div className={styles.cardContent}>
@@ -591,6 +614,8 @@ function MenuSection() {
           </div>
         </div>
 
+
+
         {/* دسته 13: ماکیتل */}
         <div className={styles.menuCard}>
           <div className={styles.cardContent}>
@@ -633,21 +658,7 @@ function MenuSection() {
           </div>
         </div>
 
-        {/* کارت مدت زمان سرو */}
-        <div className={`${styles.menuCard} ${styles.specialCard}`}>
-          <h2>مدت زمان سرو سفارش 45 دقیقه می باشد</h2>
-          <li className={styles.menuItem}>
-            <span className={styles.itemPrice}>40</span>
-            <span className={styles.itemName}>میل ندارم</span>
-          </li>
-        </div>
-
-        {/* کارت اینستاگرام */}
-        <div className={`${styles.menuCard} ${styles.specialCard}`}>
-          <h2>
-            cafe.rizhvan <i className={`bi bi-instagram ${styles.instagramIcon}`}></i>
-          </h2>
-        </div>
+        
 
       </div>
     </div>
