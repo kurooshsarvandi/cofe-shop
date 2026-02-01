@@ -351,36 +351,17 @@
 
 
 
-
-
-
-@media (min-width: 1601px) {
-
-
-
-  body {
-
-   
-
-  }
-
-
-
+/* برای نمایشگرهای بزرگ و تلویزیون‌ها */
+@media (min-width: 1400px) { 
   .menuColumns {
-
-    max-width: none !important;
-
-    width: 100vw;
-
-    box-sizing: border-box;
-
-    column-count: 6;
-
-    column-gap: 12px;
-
-    padding: 12px;
-
+    max-width: 98% !important; /* استفاده از حداکثر فضا */
+    column-count: 6 !important; /* اجبار به ۶ ستونه شدن */
+    column-gap: 15px;
   }
+}
+
+
+
 
 
 
