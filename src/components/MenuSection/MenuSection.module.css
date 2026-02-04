@@ -1,445 +1,513 @@
-/* ========== استایل پایه ========== */
-
+/* سبک اصلی بورد منو - با بک‌گراند عکس */
 .menuBoard {
-
-  background-image: url('/public/photo/backgrund.jpg');
-
-  background-size: cover;
-
-  background-position: center;
-
-  background-attachment: fixed;
-
-  background-repeat: no-repeat;
-
+  direction: rtl;
+  font-family: 'Vazirmatn', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  /* بک‌گراند جدید: عکس منو با نوشته و خوراکی‌ها */
+  background-image: url('/public/photo/back.jpg'); /* عکس بک‌گراند منو */
+  background-size: cover; /* کل فضای صفحه را پوشش دهد */
+  background-position: center; /* وسط‌چین شود */
+  background-repeat: no-repeat; /* تکرار نشود */
+  background-attachment: fixed; /* هنگام اسکرول ثابت بماند */
+  background-color: rgba(73, 60, 9, 0.607); /* پس‌زمینه سفید با کمی شفافیت */
+  background-blend-mode: overlay; /* ترکیب رنگ با عکس */
   min-height: 100vh;
-
-  width: 100%;
-
-  font-family: 'Georgia', 'Times New Roman', 'B Nazanin', serif;
-
-  line-height: 1.6;
-
-  padding: 20px;
-
-  margin: 0;
-
-  box-sizing: border-box;
-
+  position: relative;
 }
 
+/* لایه نیمه‌شفاف روی عکس برای خوانایی بهتر */
+.menuBoard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba( 1.35); /* سفید با 85% شفافیت */
+  z-index: 1;
+}
 
-
-
-
+/* محتوای منو باید روی لایه باشد */
 .menuColumns {
-
+  position: relative;
+  z-index:2; /* روی لایه سفید قرار گیرد */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
   max-width: 1400px;
-
   margin: 0 auto;
-
-  column-count: 4;      /* پیش‌فرض برای دسکتاپ */
-
-  column-gap: 20px;
-
 }
 
-
-
-/* ========== کارت‌های منو ========== */
-
+/* کارت اصلی منو */
 .menuCard {
-
-  background: rgba(20, 20, 0.8);
-
-  border-radius: 16px;
-
-  padding: 20px;
-
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-
-  transition: transform 0.3s ease;
-
-  border: 2px solid rgba(22, 12, 2, 0.1);
-
-  color: #f0e6d2;
-
- 
-
-  /* کلید اصلی: جلوگیری از شکستن کارت بین ستون‌ها */
-
-  break-inside: avoid;
-
- 
-
-  /* نمایش به صورت بلوک در جریان */
-
- display: block;
-
-  min-width: 0;
-
-  width: 100%;
-
- 
-
-  /* فاصله عمودی بین کارت‌ها */
-
-  margin-bottom: 20px;
-
+  background-color: rgba(212, 212, 196, 0.95); /* سفید با 95% شفافیت */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(156, 129, 41, 0.25);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  border: 2px solid transparent;
+  position: relative;
+  backdrop-filter: blur(5px); /* افکت بلور برای زیبایی */
 }
-
-
-
-
-
-* {
-
-  box-sizing: border-box;
-
-}
-
-
-
-
-
-
 
 .menuCard:hover {
-
-  transform: translateY(-5px);
-
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-
-  background: rgba(20, 20, 0.8);
-
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(139, 125, 77, 0.35);
+  border-color: #d4b483;
+  background-color: rgba(255, 255, 255, 1); /* هنگام هاور کاملاً سفید شود */
 }
 
+/* کادر عنوان - باکس تایتل */
+.cardContent {
+  padding: 0;
+}
 
-
-/* ========== عنوان دسته‌ها ========== */
+.textContainer {
+  padding: 20px;
+}
 
 .sectionTitle {
-
-  display: flex;
-
-  align-items: center;
-
-  font-size: 1.2em;
-
-  color: #e6dbd2;
-
-  margin-bottom: 15px;
-
-  padding-bottom: 10px;
-
-  border-bottom: 2px solid #f0e6d2;
-
-}
-
-
-
-.menuIcon {
-
-  margin-left: 10px;
-
-  font-size: 1.3em;
-
-  color: #8B4513;
-
-}
-
-
-
-/* ========== لیست آیتم‌ها ========== */
-
-.menuList {
-
-  list-style: none;
-
-  padding: 0;
-
+  background: linear-gradient(135deg, #245c03 0%, #A8925C 100%);
+  color: #fff;
+  padding: 20px;
   margin: 0;
-
-}
-
-
-
-.menuItem {
-
+  border-radius: 18px 18px 0 0;
   display: flex;
+  align-items: center;
+  justify-content: center; /* تایتل دقیقاً وسط‌چین */
+  gap: 15px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid #6B8E23;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  /* تنظیمات برای مرکزچین کامل */
+  text-align: center;
+  padding-left: 80px; /* فضای برای علامت + */
+  padding-right: 80px; /* فضای برای عکس */
+  min-height: 70px; /* ارتفاع ثابت برای همه تایتل‌ها */
+}
 
+/* محتوای متنی تایتل باید مرکزچین شود */
+.titleContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.sectionTitle:hover {
+  background: linear-gradient(135deg, #6B8E23 0%, #8B7D4D 100%);
+}
+
+/* علامت + برای باز/بسته شدن - سمت چپ */
+.sectionTitle::before {
+  content: '+';
+  position: absolute;
+  left: 25px;
+  font-size: 1.8rem;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* مرکزچین عمودی */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menuCard.active .sectionTitle::before {
+  content: '−';
+  transform: translateY(-50%) rotate(0deg);
+}
+
+/* آیکون درون تایتل - کنار متن */
+.menuIcon {
+  font-size: 1.6rem;
+  color: #FFD700;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+  flex-shrink: 0; /* اندازه ثابت */
+}
+
+/* متن تایتل */
+.titleText {
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* عکس گرد در کادر عنوان - سمت راست */
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  border: 3px solid #FFD700;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  transition: all 0.3s ease;
+  /* مرکزچین عمودی */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* لیست آیتم‌ها - خارج از کادر */
+.menuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.5s ease;
+}
+
+.menuCard.active .menuList {
+  max-height: 2000px;
+  opacity: 1;
+  transform: translateY(0);
+  padding-top: 25px;
+}
+
+/* هر آیتم منو */
+.menuItem {
+  display: flex;
   justify-content: space-between;
-
-  align-items: baseline;
-
-  padding: 10px 0;
-
-  position: relative;
-
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px dashed #d4b483;
+  transition: all 0.2s ease;
 }
 
-
-
-
-
-.itemName, .itemPrice {
-
-  position: relative;
-
-  z-index: 1;
-
-  padding: 0 8px;
-
-  background: rgba(20, 30, 30, 0.9);
-
+.menuItem:hover {
+  background-color: rgba(107, 142, 35, 0.05);
+  padding-right: 10px;
+  border-bottom-color: #8B7D4D;
 }
 
-
+.menuItem:last-child {
+  border-bottom: none;
+}
 
 .itemName {
-
-  color: #f9f9f3;
-
-  font-size: 1.2rem;
-
+  font-size: 1.1rem;
+  color: #5a4d29;
+  font-weight: 600;
+  flex-grow: 1;
   text-align: right;
-
-  flex: 1;
-
-  padding-left: 10px;
-
- 
-
+  padding-right: 15px;
 }
-
-
 
 .itemPrice {
-
-  color: #f8e303;
-
-  font-weight: 600;
-
-  font-size: 1.em;
-
-  min-width: 60px;
-
-  text-align: left;
-
-  direction: ltr;
-
-  padding-right: 5px;
-
-}
-
-
-
-/* ========== کارت‌های ویژه ========== */
-
-.specialCard {
-
+  background: linear-gradient(135deg, #8B7D4D 0%, #A8925C 100%);
+  color: #fff;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1rem;
+  min-width: 70px;
   text-align: center;
-
-  background: rgba(60, 60, 60, 0.85);
-
-  border: 2px dashed rgba(255, 255, 255, 0.3);
-
+  box-shadow: 0 3px 6px rgba(139, 125, 77, 0.3);
+  border: 1px solid #FFD700;
 }
 
-
+/* کارت‌های ویژه */
+.specialCard {
+  background: linear-gradient(135deg, rgba(107, 142, 35, 0.9) 0%, rgba(139, 125, 77, 0.9) 100%);
+  color: #fff;
+  text-align: center;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #FFD700;
+  backdrop-filter: blur(3px);
+}
 
 .specialCard h2 {
-
-  color: #f8d702;
-
-  font-size: 1.2em;
-
-  margin-bottom: 15px;
-
+  margin: 0 0 20px 0;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+.specialCard .menuItem {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+  color: #fff;
+  width: 100%;
+}
 
+.specialCard .itemName,
+.specialCard .itemPrice {
+  color: #fff;
+}
 
-/* موبایل خیلی کوچک */
+.specialCard .itemPrice {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #FFD700;
+}
+
+/* آیکون اینستاگرام */
+.instagramIcon {
+  color: #E4405F;
+  font-size: 1.8rem;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* عکس‌های مختلف برای هر دسته */
+.herbalTea .sectionTitle::after {
+  background-image: url('/public/photo/tea.jpg');
+  background-color: #f5f5f5;
+  background-size: cover;
+  background-position: center;
+}
+.coffeeHot .sectionTitle::after {
+  background-image: url('/public/photo/coffee.jpg');
+  background-color: #f5f5f5;
+  background-size: cover;
+  background-position: center;
+}
+
+.smoothie .sectionTitle::after {
+  background-image: url('/public/photo/smootii.jpg');
+  background-color: #f5f5f5;
+  background-size: cover;
+  background-position: center;
+}
+
+.coffeeCold .sectionTitle::after {
+  background-image: url('/public/photo/ICE COFFE.jpg');
+  background-color: #f5f5f5;
+  background-size: cover;
+  background-position: center;
+}
+
+.hotDrinks .sectionTitle::after {
+  background-image: url('/public/photo/drinkhot.jpg');
+  background-color: #f5f5f5;
+  background-size: cover;
+  background-position: center;
+}
+
+.breakfast .sectionTitle::after {
+  background-image: url('/public/photo/breakfast.jpg');
+  background-color: #f5f5f5;
+  background-size: cover;
+  background-position: center;
+}
+
+.pasta .sectionTitle::after {
+  background-image: url('/public/photo/pasta.jpg');
+  background-color: #f5f5f5;
+  background-size: cover;
+  background-position: center;
+}
+
+.pizza .sectionTitle::after {
+  background-image: url('/public/photo/Pizza.jpg');
+  background-color: #f5f5f5;
+  background-size: cover;
+  background-position: center;
+}
+
+.iceCreamShake .sectionTitle::after {
+  background-image: url('/public/photo/ice crem.jpg');
+  background-color: #f5f5f5;
+  background-size: cover;
+  background-position: center;
+}
+
+.cake .sectionTitle::after {
+  background-image: url('/public/photo/CAKE.jpg');
+  background-color: #f5f5f5;
+  background-size: cover;
+  background-position: center;
+}
+
+.fastFood .sectionTitle::after {
+  background-image: url('/public/photo/fastfood.jpg');
+  background-color: #f5f5f5;
+  background-size: cover;
+  background-position: center;
+}
+
+.juice .sectionTitle::after {
+  background-image: url('/public/photo/juice.jpg');
+  background-color: #f5f5f5;
+  background-size: cover;
+  background-position: center;
+}
+
+.mocktail .sectionTitle::after {
+  background-image: url('/public/photo/moktial.jpg');
+  background-color: #f5f5f5;
+  background-size: cover;
+  background-position: center;
+}
+
+/* کارت‌های ویژه بدون عکس */
+.specialCard .sectionTitle::after {
+  display: none;
+}
+
+/* انیمیشن کلیک */
+@keyframes expandBox {
+  0% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.menuCard.active {
+  animation: expandBox 0.4s ease;
+}
+
+/* ریسپانسیو - IMPROVED */
+@media (min-width: 1024px) {
+  .menuColumns {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+  
+  .sectionTitle {
+    font-size: 1.5rem;
+    padding-left: 90px;
+    padding-right: 90px;
+    min-height: 75px;
+  }
+  
+  .sectionTitle::after {
+    width: 55px;
+    height: 55px;
+    right: 25px;
+  }
+  
+  .sectionTitle::before {
+    left: 30px;
+    width: 45px;
+    height: 45px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* تنظیم بک‌گراند برای موبایل */
+  .menuBoard {
+    background-attachment: scroll; /* در موبایل ثابت نباشد */
+    padding: 15px;
+  }
+  
+  .menuColumns {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.2rem;
+    padding: 20px 70px 20px 70px;
+    min-height: 65px;
+    justify-content: center; /* همچنان وسط‌چین */
+  }
+  
+  .sectionTitle::after {
+    width: 45px;
+    height: 45px;
+    right: 15px;
+  }
+  
+  .sectionTitle::before {
+    left: 15px;
+  }
+  
+  .menuIcon {
+    font-size: 1.4rem;
+  }
+}
 
 @media (max-width: 480px) {
-
-  .menuColumns {
-
-    max-width: 100%;
-
+  .menuBoard {
+    padding: 10px;
   }
-
-
-
-  .menuList {
-
+  
+  .menuColumns {
     grid-template-columns: 1fr;
-
   }
-
-}
-
-
-
-/* موبایل */
-
-@media (min-width: 481px) and (max-width: 768px) {
-
-  .menuColumns {
-
-    max-width: 100%;
-
-  }
-
-
-
-  .menuList {
-
-    grid-template-columns: repeat(2, 1fr);
-
-  }
-
-}
-
-
-
-/* تبلت */
-
-@media (min-width: 769px) and (max-width: 1100px) {
-
-  .menuColumns {
-
-    max-width: 95%;
-
-  }
-
-
-
-  .menuList {
-
-    grid-template-columns: repeat(2, 1fr);
-
-  }
-
-}
-
-
-
-/* لپ‌تاپ */
-
-@media (min-width: 1101px) and (max-width: 1600px) {
-
-  .menuColumns {
-
-    max-width: 1400px;
-
-  }
-
-
-
-  .menuList {
-
-    grid-template-columns: repeat(3, 1fr);
-
-  }
-
-}
-
-
-
-
-/* برای نمایشگرهای بزرگ و تلویزیون‌ها */
-@media (min-width: 1400px) { 
-  .menuColumns {
-    max-width: 100% !important; /* استفاده از حداکثر فضا */
-    column-count: 7!important; /* اجبار به ۶ ستونه شدن */
-    column-gap: 7px;
-  }
-}
-
-
-
-
-
-
-  .menuCard {
-
-    break-inside: avoid;
-
-    margin: 0 0 12px 0;
-
-    padding: 1px;
-
-    width: 100%;
-
-    box-sizing: border-box;
-
-    min-width: 0 !important;
-
-    outline: 2px solid yellow;  /* خیلی مهم */
-
-  }
-
-
-
- 
-
-
-
-  .imageContainer {
-
-    display: none;
-
-  }
-
-
-
-  .menuList {
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 4px;
-
-  }
-
-
-
-  .menuItem {
-
-    min-height: 34px;
-
-    padding: 4px 6px;
-
-    font-size: 1.25em;
-
-  }
-
-
-
+  
   .sectionTitle {
-
-    font-size: 1.15em;
-
-    margin-bottom: 6px;
-
+    font-size: 1.1rem;
+    padding: 18px 65px 18px 65px;
+    min-height: 60px;
   }
-
-
-
+  
+  .sectionTitle::after {
+    width: 40px;
+    height: 40px;
+    right: 12px;
+  }
+  
+  .sectionTitle::before {
+    left: 12px;
+    width: 35px;
+    height: 35px;
+    font-size: 1.6rem;
+  }
+  
+  .menuIcon {
+    font-size: 1.3rem;
+  }
+  
   .itemName {
-
-    font-size: 0.78em;
-
+    font-size: 1rem;
   }
-
-
-
+  
   .itemPrice {
-
-    font-size: 0.82em;
-
-    min-width: 42px;
-
+    font-size: 0.9rem;
+    min-width: 60px;
+    padding: 5px 15px;
   }
+}
 
+/* برای صفحات بسیار کوچک */
+@media (max-width: 360px) {
+  .sectionTitle {
+    font-size: 1rem;
+    padding: 15px 60px 15px 60px;
+    min-height: 55px;
+  }
+  
+  .sectionTitle::after {
+    width: 35px;
+    height: 35px;
+    right: 10px;
+  }
+  
+  .sectionTitle::before {
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 1.4rem;
+  }
+  
+  .menuIcon {
+    font-size: 1.2rem;
+  }
+  
+  .specialCard h2 {
+    font-size: 1.3rem;
+  }
+}
