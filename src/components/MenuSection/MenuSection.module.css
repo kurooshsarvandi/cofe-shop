@@ -1,36 +1,58 @@
-/* سبک اصلی بورد منو - با بک‌گراند عکس */
+/* ======== بخش ۱: ساختار جداگانه برای بک‌گراند ======== */
+
+/* کانتینر اصلی - بدون بک‌گراند */
+.menuContainer {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* بک‌گراند کاملاً جدا */
+.backgroundLayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* پشت همه چیز */
+}
+
+/* تصویر بک‌گراند */
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: rgba(73, 60, 9, 0.307);
+}
+
+/* لایه سفید شفاف */
+.bgOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* ======== بخش ۲: محتوای منو (همان استایل قبلی) ======== */
+
+/* سبک اصلی بورد منو - فقط محتوا */
 .menuBoard {
   direction: rtl;
   font-family: 'Vazirmatn', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 20px;
-  /* بک‌گراند جدید: عکس منو با نوشته و خوراکی‌ها */
-  background-image: url('/public/photo/back.jpg'); /* عکس بک‌گراند منو */
-  background-size: cover; /* کل فضای صفحه را پوشش دهد */
-  background-position: center; /* وسط‌چین شود */
-  background-repeat: no-repeat; /* تکرار نشود */
-  background-attachment: fixed; /* هنگام اسکرول ثابت بماند */
-  background-color: rgba(73, 60, 9, 0.607); /* پس‌زمینه سفید با کمی شفافیت */
-  background-blend-mode: overlay; /* ترکیب رنگ با عکس */
   min-height: 100vh;
   position: relative;
-}
-
-/* لایه نیمه‌شفاف روی عکس برای خوانایی بهتر */
-.menuBoard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba( 1.35); /* سفید با 85% شفافیت */
-  z-index: 1;
 }
 
 /* محتوای منو باید روی لایه باشد */
 .menuColumns {
   position: relative;
-  z-index:2; /* روی لایه سفید قرار گیرد */
+  z-index: 1; /* روی بک‌گراند */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 25px;
@@ -40,21 +62,18 @@
 
 /* کارت اصلی منو */
 .menuCard {
-  background-color: rgba(212, 212, 196, 0.95); /* سفید با 95% شفافیت */
+  background-color: rgba(31, 59, 9, 0.95);
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(156, 129, 41, 0.25);
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
   border: 2px solid transparent;
   position: relative;
-  backdrop-filter: blur(5px); /* افکت بلور برای زیبایی */
 }
 
 .menuCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(139, 125, 77, 0.35);
+  box-shadow: 0 15px 35px rgba(172, 136, 19, 0.35);
   border-color: #d4b483;
-  background-color: rgba(255, 255, 255, 1); /* هنگام هاور کاملاً سفید شود */
+  background-color: rgba(255, 255, 255, 1);
 }
 
 /* کادر عنوان - باکس تایتل */
@@ -74,30 +93,19 @@
   border-radius: 18px 18px 0 0;
   display: flex;
   align-items: center;
-  justify-content: center; /* تایتل دقیقاً وسط‌چین */
+  justify-content: center;
   gap: 15px;
   font-size: 1.4rem;
   font-weight: 700;
   position: relative;
   cursor: pointer;
   user-select: none;
-  transition: all 0.3s ease;
   border-bottom: 3px solid #6B8E23;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  /* تنظیمات برای مرکزچین کامل */
   text-align: center;
-  padding-left: 80px; /* فضای برای علامت + */
-  padding-right: 80px; /* فضای برای عکس */
-  min-height: 70px; /* ارتفاع ثابت برای همه تایتل‌ها */
-}
-
-/* محتوای متنی تایتل باید مرکزچین شود */
-.titleContent {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
+  padding-left: 80px;
+  padding-right: 80px;
+  min-height: 70px;
 }
 
 .sectionTitle:hover {
@@ -111,20 +119,17 @@
   left: 25px;
   font-size: 1.8rem;
   font-weight: 300;
-  transition: transform 0.3s ease;
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* مرکزچین عمودی */
   top: 50%;
   transform: translateY(-50%);
 }
 
 .menuCard.active .sectionTitle::before {
   content: '−';
-  transform: translateY(-50%) rotate(0deg);
 }
 
 /* آیکون درون تایتل - کنار متن */
@@ -132,7 +137,7 @@
   font-size: 1.6rem;
   color: #FFD700;
   filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
-  flex-shrink: 0; /* اندازه ثابت */
+  flex-shrink: 0;
 }
 
 /* متن تایتل */
@@ -154,8 +159,6 @@
   border: 3px solid #FFD700;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: #fff;
-  transition: all 0.3s ease;
-  /* مرکزچین عمودی */
   top: 50%;
   transform: translateY(-50%);
 }
@@ -165,17 +168,14 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  max-height: 0;
-  overflow: hidden;
+  height: 0;
   opacity: 0;
-  transform: translateY(-10px);
-  transition: all 0.5s ease;
+  overflow: hidden;
 }
 
 .menuCard.active .menuList {
-  max-height: 2000px;
+  height: auto;
   opacity: 1;
-  transform: translateY(0);
   padding-top: 25px;
 }
 
@@ -186,13 +186,12 @@
   align-items: center;
   padding: 14px 0;
   border-bottom: 1px dashed #d4b483;
-  transition: all 0.2s ease;
 }
 
 .menuItem:hover {
   background-color: rgba(107, 142, 35, 0.05);
   padding-right: 10px;
-  border-bottom-color: #8B7D4D;
+  border-bottom-color: #8B8E23;
 }
 
 .menuItem:last-child {
@@ -232,7 +231,6 @@
   justify-content: center;
   align-items: center;
   border: 3px solid #FFD700;
-  backdrop-filter: blur(3px);
 }
 
 .specialCard h2 {
@@ -265,92 +263,36 @@
   vertical-align: middle;
 }
 
-/* عکس‌های مختلف برای هر دسته */
-.herbalTea .sectionTitle::after {
-  background-image: url('/public/photo/tea.jpg');
-  background-color: #f5f5f5;
-  background-size: cover;
-  background-position: center;
-}
-.coffeeHot .sectionTitle::after {
-  background-image: url('/public/photo/coffee.jpg');
-  background-color: #f5f5f5;
-  background-size: cover;
-  background-position: center;
-}
+/* ======== بخش ۳: عکس‌های اختصاصی هر دسته ======== */
 
-.smoothie .sectionTitle::after {
-  background-image: url('/public/photo/smootii.jpg');
-  background-color: #f5f5f5;
-  background-size: cover;
-  background-position: center;
-}
+.herbalTea .sectionTitle::after { background-image: url('/public/photo/tea.jpg'); }
+.coffeeHot .sectionTitle::after { background-image: url('/public/photo/coffee.jpg'); }
+.smoothie .sectionTitle::after { background-image: url('/public/photo/smootii.jpg'); }
+.coffeeCold .sectionTitle::after { background-image: url('/public/photo/ICE COFFE.jpg'); }
+.hotDrinks .sectionTitle::after { background-image: url('/public/photo/drinkhot.jpg'); }
+.breakfast .sectionTitle::after { background-image: url('/public/photo/breakfast.jpg'); }
+.pasta .sectionTitle::after { background-image: url('/public/photo/pasta.jpg'); }
+.pizza .sectionTitle::after { background-image: url('/public/photo/Pizza.jpg'); }
+.iceCreamShake .sectionTitle::after { background-image: url('/public/photo/ice crem.jpg'); }
+.cake .sectionTitle::after { background-image: url('/public/photo/CAKE.jpg'); }
+.fastFood .sectionTitle::after { background-image: url('/public/photo/fastfood.jpg'); }
+.juice .sectionTitle::after { background-image: url('/public/photo/juice.jpg'); }
+.mocktail .sectionTitle::after { background-image: url('/public/photo/moktial.jpg'); }
 
-.coffeeCold .sectionTitle::after {
-  background-image: url('/public/photo/ICE COFFE.jpg');
-  background-color: #f5f5f5;
-  background-size: cover;
-  background-position: center;
-}
-
-.hotDrinks .sectionTitle::after {
-  background-image: url('/public/photo/drinkhot.jpg');
-  background-color: #f5f5f5;
-  background-size: cover;
-  background-position: center;
-}
-
-.breakfast .sectionTitle::after {
-  background-image: url('/public/photo/breakfast.jpg');
-  background-color: #f5f5f5;
-  background-size: cover;
-  background-position: center;
-}
-
-.pasta .sectionTitle::after {
-  background-image: url('/public/photo/pasta.jpg');
-  background-color: #f5f5f5;
-  background-size: cover;
-  background-position: center;
-}
-
-.pizza .sectionTitle::after {
-  background-image: url('/public/photo/Pizza.jpg');
-  background-color: #f5f5f5;
-  background-size: cover;
-  background-position: center;
-}
-
-.iceCreamShake .sectionTitle::after {
-  background-image: url('/public/photo/ice crem.jpg');
-  background-color: #f5f5f5;
-  background-size: cover;
-  background-position: center;
-}
-
-.cake .sectionTitle::after {
-  background-image: url('/public/photo/CAKE.jpg');
-  background-color: #f5f5f5;
-  background-size: cover;
-  background-position: center;
-}
-
-.fastFood .sectionTitle::after {
-  background-image: url('/public/photo/fastfood.jpg');
-  background-color: #f5f5f5;
-  background-size: cover;
-  background-position: center;
-}
-
-.juice .sectionTitle::after {
-  background-image: url('/public/photo/juice.jpg');
-  background-color: #f5f5f5;
-  background-size: cover;
-  background-position: center;
-}
-
+/* استایل مشترک برای همه عکس‌ها */
+.herbalTea .sectionTitle::after,
+.coffeeHot .sectionTitle::after,
+.smoothie .sectionTitle::after,
+.coffeeCold .sectionTitle::after,
+.hotDrinks .sectionTitle::after,
+.breakfast .sectionTitle::after,
+.pasta .sectionTitle::after,
+.pizza .sectionTitle::after,
+.iceCreamShake .sectionTitle::after,
+.cake .sectionTitle::after,
+.fastFood .sectionTitle::after,
+.juice .sectionTitle::after,
 .mocktail .sectionTitle::after {
-  background-image: url('/public/photo/moktial.jpg');
   background-color: #f5f5f5;
   background-size: cover;
   background-position: center;
@@ -361,24 +303,8 @@
   display: none;
 }
 
-/* انیمیشن کلیک */
-@keyframes expandBox {
-  0% {
-    transform: scale(0.95);
-  }
-  50% {
-    transform: scale(1.02);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
+/* ======== بخش ۴: رسپانسیو ======== */
 
-.menuCard.active {
-  animation: expandBox 0.4s ease;
-}
-
-/* ریسپانسیو - IMPROVED */
 @media (min-width: 1024px) {
   .menuColumns {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -406,9 +332,7 @@
 }
 
 @media (max-width: 768px) {
-  /* تنظیم بک‌گراند برای موبایل */
   .menuBoard {
-    background-attachment: scroll; /* در موبایل ثابت نباشد */
     padding: 15px;
   }
   
@@ -421,7 +345,7 @@
     font-size: 1.2rem;
     padding: 20px 70px 20px 70px;
     min-height: 65px;
-    justify-content: center; /* همچنان وسط‌چین */
+    justify-content: center;
   }
   
   .sectionTitle::after {
@@ -482,7 +406,6 @@
   }
 }
 
-/* برای صفحات بسیار کوچک */
 @media (max-width: 360px) {
   .sectionTitle {
     font-size: 1rem;
