@@ -1,7 +1,19 @@
+// src/Home/HomeSection.js
 import React from 'react';
 import './HomeSection.css';
 
 function HomeSection() {
+  const scrollToMenu = () => {
+    const menuSection = document.getElementById('menu');
+    if (menuSection) {
+      // اسکرول نرم به بخش منو
+      menuSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section id="home" className="home-section">
       
@@ -28,7 +40,10 @@ function HomeSection() {
         <p className="home-subtitle">
           مهمان‌نوازی اصیل ایرانی در دل یک کافه مدرن
         </p>
-        <button className="cta-button">
+        <button 
+          className="cta-button" 
+          onClick={scrollToMenu}
+        >
           مشاهده منوی کامل
         </button>
       </div>
