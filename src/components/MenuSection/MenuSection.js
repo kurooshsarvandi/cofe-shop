@@ -43,13 +43,27 @@ function MenuSection() {
               </h2>
               <ul className={styles.menuList}>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>65</span>
-                  <span className={styles.itemName}>اسپرسو تک</span>
+                  <span className={styles.itemPrice}>70/85</span>
+                  <span className={styles.itemName}>اسپرسو (70/30)
+                  </span>
                 </li>
                 <li className={styles.menuItem}>
-                  <span className={styles.itemPrice}>80</span>
-                  <span className={styles.itemName}>اسپرسو دبل</span>
+                  <span className={styles.itemPrice}>70/85</span>
+                  <span className={styles.itemName}>اسپرسو (80/20)</span>
                 </li>
+                <li className={styles.menuItem}>
+                  <span className={styles.itemPrice}>70/90</span>
+                  <span className={styles.itemName}>اسپرسو (50/50)</span>
+                </li>
+                <li className={styles.menuItem}>
+                  <span className={styles.itemPrice}>65/80</span>
+                  <span className={styles.itemName}>اسپرسو (100 Br)</span>
+                </li>
+                <li className={styles.menuItem}>
+                  <span className={styles.itemPrice}>80/100</span>
+                  <span className={styles.itemName}>اسپرسو (100 Ar)</span>
+                </li>
+                
                 <li className={styles.menuItem}>
                   <span className={styles.itemPrice}>100</span>
                   <span className={styles.itemName}>قهوه ترک</span>
